@@ -3,7 +3,9 @@ export class Book {
     public title: string,
     public author: string,
     public description: string,
-    public image: string
+    public image: string,
+    public favorite: boolean,
+    public added: boolean
   ) {}
 
   public static random(): Book {
@@ -11,7 +13,9 @@ export class Book {
       'title',
       'author',
       'description',
-      'https://material.angular.io/assets/img/examples/shiba2.jpg'
+      'https://material.angular.io/assets/img/examples/shiba2.jpg',
+      false,
+      false
     );
   }
 

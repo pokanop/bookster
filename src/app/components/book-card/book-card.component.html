@@ -8,11 +8,11 @@
     <p>{{ book.description }}</p>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-icon-button class="favorite">
-      <mat-icon>favorite</mat-icon>
+    <button mat-icon-button (click)="addToLibrary()">
+      <mat-icon>{{ addIcon() }}</mat-icon>
     </button>
-    <button mat-icon-button>
-      <mat-icon>add</mat-icon>
+    <button mat-icon-button class="favorite" (click)="toggleFavorite()">
+      <mat-icon>{{ favoriteIcon() }}</mat-icon>
     </button>
     <button mat-icon-button>
       <mat-icon>share</mat-icon>

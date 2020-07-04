@@ -13,4 +13,22 @@ export class BookCardComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  favoriteIcon(): string {
+    return this.book.favorite ? 'favorite' : 'favorite_border';
+  }
+
+  addIcon(): string {
+    return this.book.added ? 'done' : 'add';
+  }
+
+  toggleFavorite() {
+    // TODO: Persist this change
+    this.book.favorite = !this.book.favorite;
+  }
+
+  addToLibrary() {
+    // TODO: Update in library service
+    this.book.added = !this.book.added;
+  }
 }
