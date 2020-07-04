@@ -11,11 +11,12 @@ import { MatMenuModule } from '@angular/material/menu';
 
 import { AppRoutingModule } from '@src/app/app-routing.module';
 import { AppComponent } from '@src/app/app.component';
-import { HomeComponent } from '@src/app/home/home.component';
-import { LibraryComponent } from '@src/app/library/library.component';
-import { BooksComponent } from '@src/app/books/books.component';
-import { FriendsComponent } from '@src/app/friends/friends.component';
-import { ProfileComponent } from '@src/app/profile/profile.component';
+import { HomeComponent } from '@src/app/pages/home/home.component';
+import { LibraryComponent } from '@src/app/pages/library/library.component';
+import { BooksComponent } from '@src/app/pages/books/books.component';
+import { FriendsComponent } from '@src/app/pages/friends/friends.component';
+import { ProfileComponent } from '@src/app/pages/profile/profile.component';
+import { BookCardListComponent } from '@src/app/components/book-card-list/book-card-list.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ProfileComponent } from '@src/app/profile/profile.component';
     BooksComponent,
     FriendsComponent,
     ProfileComponent,
+    BookCardListComponent,
   ],
   imports: [
     BrowserModule,

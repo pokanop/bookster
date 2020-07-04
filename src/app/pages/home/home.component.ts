@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Book } from '../../models/book.model';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   name = 'Sahel'; // TODO: Use auth service to get this
+  noteworthyBooks: Book[] = [];
+  recommendedBooks: Book[] = [];
+  unfinishedBooks: Book[] = [];
+  friendsBooks: Book[] = [];
 
   constructor() {}
 

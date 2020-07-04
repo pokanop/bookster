@@ -2,12 +2,16 @@
 
 <h2>New & Noteworthy</h2>
 <p>Here's a feed of recently added or changed books.</p>
+<app-book-card-list [books]="noteworthyBooks"></app-book-card-list>
 
 <h2>Continue Reading</h2>
 <p>Finish reading something you started?</p>
+<app-book-card-list [books]="unfinishedBooks"></app-book-card-list>
 
 <h2>Recommendations</h2>
 <p>These books come highly recommended by others.</p>
+<app-book-card-list [books]="recommendedBooks"></app-book-card-list>
 
 <h2>What The Friend <span class="fox" (click)="foxSay()">🦊</span> Say?</h2>
-<p>See your friends have been reading.</p>
+<p>See what your friends have been reading.</p>
+<app-book-card-list [books]="friendsBooks"></app-book-card-list>
