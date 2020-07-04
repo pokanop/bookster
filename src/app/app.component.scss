@@ -30,6 +30,12 @@ $warn: mat-color($app-warn);
   text-align: center;
 
   a {
+    mat-icon {
+      position: absolute;
+      left: 8px;
+      top: 7px;
+    }
+
     width: 80%;
     margin: 8px;
   }
@@ -42,4 +48,8 @@ $warn: mat-color($app-warn);
 
 .page-content {
   padding: 20px;
+}
+
+.github-icon {
+  font-size: 22px;
 }

@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatMenuModule } from '@angular/material/menu';
 
 import { AppRoutingModule } from '@src/app/app-routing.module';
 import { AppComponent } from '@src/app/app.component';
@@ -17,7 +18,14 @@ import { FriendsComponent } from '@src/app/friends/friends.component';
 import { ProfileComponent } from '@src/app/profile/profile.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, LibraryComponent, BooksComponent, FriendsComponent, ProfileComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    LibraryComponent,
+    BooksComponent,
+    FriendsComponent,
+    ProfileComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -27,6 +35,7 @@ import { ProfileComponent } from '@src/app/profile/profile.component';
     MatToolbarModule,
     MatSidenavModule,
     MatGridListModule,
+    MatMenuModule,
     AppRoutingModule,
   ],
   providers: [],

@@ -1,10 +1,25 @@
 <mat-sidenav-container class="menu-container" [hasBackdrop]="hasBackdrop">
   <mat-sidenav #sidenav class="menu-sidenav" [mode]="mode">
-    <a mat-raised-button color="primary" routerLink="/">Home</a>
-    <a mat-raised-button color="primary" routerLink="/library">Library</a>
-    <a mat-raised-button color="primary" routerLink="/books">Books</a>
-    <a mat-raised-button color="primary" routerLink="/friends">Friends</a>
-    <a mat-raised-button color="primary" routerLink="/profile">Profile</a>
+    <a mat-raised-button color="primary" routerLink="/">
+      <mat-icon>home</mat-icon>
+      <span>Home</span>
+    </a>
+    <a mat-raised-button color="primary" routerLink="/library">
+      <mat-icon>view_agenda</mat-icon>
+      <span>Library</span>
+    </a>
+    <a mat-raised-button color="primary" routerLink="/books">
+      <mat-icon>book</mat-icon>
+      <span>Books</span>
+    </a>
+    <a mat-raised-button color="primary" routerLink="/friends">
+      <mat-icon>people</mat-icon>
+      <span>Friends</span>
+    </a>
+    <a mat-raised-button color="primary" routerLink="/profile">
+      <mat-icon>face</mat-icon>
+      <span>Profile</span>
+    </a>
   </mat-sidenav>
 
   <mat-sidenav-content class="menu-content">
@@ -14,9 +29,28 @@
       </button>
       <span>{{ title }}</span>
       <span class="spacer"></span>
-      <button mat-icon-button aria-label="Profile">
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Profile">
         <mat-icon>face</mat-icon>
       </button>
+      <mat-menu #menu="matMenu">
+        <a mat-menu-item routerLink="/profile">
+          <mat-icon>person</mat-icon>
+          <span>View profile</span>
+        </a>
+        <button mat-menu-item>
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Sign out</span>
+        </button>
+      </mat-menu>
+      <a
+        mat-icon-button
+        aria-label="Github"
+        class="github-icon"
+        href="https://github.com/pokanop/bookster"
+        target="_blank"
+      >
+        <mat-icon fontSet="fab" fontIcon="fa-github"></mat-icon>
+      </a>
     </mat-toolbar>
 
     <div class="page-content">
