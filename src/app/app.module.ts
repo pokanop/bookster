@@ -8,6 +8,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatCardModule } from '@angular/material/card';
 
 import { AppRoutingModule } from '@src/app/app-routing.module';
 import { AppComponent } from '@src/app/app.component';
@@ -17,6 +18,7 @@ import { BooksComponent } from '@src/app/pages/books/books.component';
 import { FriendsComponent } from '@src/app/pages/friends/friends.component';
 import { ProfileComponent } from '@src/app/pages/profile/profile.component';
 import { BookCardListComponent } from '@src/app/components/book-card-list/book-card-list.component';
+import { BookCardComponent } from '@src/app/components/book-card/book-card.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { BookCardListComponent } from '@src/app/components/book-card-list/book-c
     FriendsComponent,
     ProfileComponent,
     BookCardListComponent,
+    BookCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,6 +41,7 @@ import { BookCardListComponent } from '@src/app/components/book-card-list/book-c
     MatSidenavModule,
     MatGridListModule,
     MatMenuModule,
+    MatCardModule,
     AppRoutingModule,
   ],
   providers: [],

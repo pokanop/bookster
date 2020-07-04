@@ -1,1 +1,5 @@
-<p>book-card-list works!</p>
+<mat-grid-list cols="8" rowHeight="1:1.5" gutterSize="16px">
+  <mat-grid-tile *ngFor="let book of books">
+    <app-book-card [book]="book"></app-book-card>
+  </mat-grid-tile>
+</mat-grid-list>
