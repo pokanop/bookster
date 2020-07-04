@@ -16,7 +16,22 @@
   <button mat-icon-button>
     <mat-icon>cloud_download</mat-icon>
   </button>
-  <button mat-icon-button>
+
+  <mat-menu #shareMenu="matMenu">
+    <button mat-menu-item>
+      <mat-icon fontSet="fab" fontIcon="fa-twitter"></mat-icon>
+      <span>Twitter</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon fontSet="fab" fontIcon="fa-facebook"></mat-icon>
+      <span>Facebook</span>
+    </button>
+    <button mat-menu-item>
+      <mat-icon fontSet="fab" fontIcon="fa-linkedin"></mat-icon>
+      <span>LinkedIn</span>
+    </button>
+  </mat-menu>
+  <button mat-icon-button [matMenuTriggerFor]="shareMenu">
     <mat-icon>share</mat-icon>
   </button>
 </mat-card-actions>
