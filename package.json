@@ -1,7 +1,10 @@
 {
   "name": "bookster",
   "nativescript": {
-    "id": "org.nativescript.bookster"
+    "id": "org.nativescript.bookster",
+    "tns-ios": {
+      "version": "6.5.1"
+    }
   },
   "version": "0.0.0",
   "scripts": {
@@ -23,6 +26,7 @@
     "@angular/common": "~9.1.0",
     "@angular/compiler": "~9.1.0",
     "@angular/core": "~9.1.0",
+    "@angular/flex-layout": "^10.0.0-beta.32",
     "@angular/forms": "~9.1.0",
     "@angular/material": "^9.2.4",
     "@angular/platform-browser": "~9.1.0",

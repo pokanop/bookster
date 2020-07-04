@@ -1,5 +1,5 @@
-<mat-grid-list cols="8" rowHeight="1:1.5" gutterSize="16px">
-  <mat-grid-tile *ngFor="let book of books">
+<div fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="16px grid">
+  <div fxFlex="180px" *ngFor="let book of books">
     <app-book-card [book]="book"></app-book-card>
-  </mat-grid-tile>
-</mat-grid-list>
+  </div>
+</div>
