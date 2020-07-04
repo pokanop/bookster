@@ -10,6 +10,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
+import { MatDialogModule } from '@angular/material/dialog';
 
 import { AppRoutingModule } from '@src/app/app-routing.module';
 import { AppComponent } from '@src/app/app.component';
@@ -21,6 +22,7 @@ import { ProfileComponent } from '@src/app/pages/profile/profile.component';
 import { BookCardListComponent } from '@src/app/components/book-card-list/book-card-list.component';
 import { BookCardComponent } from '@src/app/components/book-card/book-card.component';
 import { BookCardActionsComponent } from '@src/app/components/book-card-actions/book-card-actions.component';
+import { BookCardDialogComponent } from '@src/app/components/book-card-dialog/book-card-dialog.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,7 @@ import { BookCardActionsComponent } from '@src/app/components/book-card-actions/
     BookCardListComponent,
     BookCardComponent,
     BookCardActionsComponent,
+    BookCardDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,8 +49,10 @@ import { BookCardActionsComponent } from '@src/app/components/book-card-actions/
     MatMenuModule,
     MatCardModule,
     MatRippleModule,
+    MatDialogModule,
     AppRoutingModule,
   ],
+  entryComponents: [BookCardDialogComponent],
   providers: [],
   bootstrap: [AppComponent],
 })

@@ -13,3 +13,9 @@ body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
 }
+
+.mat-dialog-container {
+  margin: 0;
+  padding: 0 !important;
+  max-width: 640px;
+}

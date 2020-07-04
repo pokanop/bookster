@@ -1,14 +1,23 @@
 <mat-card>
-  <mat-card-header *ngIf="extended">
-    <mat-card-title>{{ book.title }}</mat-card-title>
-    <mat-card-subtitle>{{ book.author }}</mat-card-subtitle>
-  </mat-card-header>
+  <div fxLayout="row" fxLayoutAlign="stretch" *ngIf="extended">
+    <div fxFlex="50%">
+      <mat-card-title>{{ book.title }}</mat-card-title>
+      <mat-card-subtitle>{{ book.author }}</mat-card-subtitle>
+    </div>
+    <div fxFlex="50%">
+      <app-book-card-actions
+        [book]="book"
+        [actions]="topActions()"
+        class="float-right"
+      ></app-book-card-actions>
+    </div>
+  </div>
   <img mat-card-image [src]="book.image" [alt]="book.title" />
   <mat-card-content *ngIf="extended">
     <p>{{ book.description }}</p>
   </mat-card-content>
   <app-book-card-actions
     [book]="book"
-    [extended]="extended"
+    [actions]="bottomActions()"
   ></app-book-card-actions>
 </mat-card>

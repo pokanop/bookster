@@ -13,4 +13,16 @@ export class BookCardComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  topActions(): string[] {
+    return ['read', 'favorite'];
+  }
+
+  bottomActions(): string[] {
+    if (this.extended) {
+      return ['add', 'book', 'download', 'share'];
+    } else {
+      return ['zoom', 'download', 'share'];
+    }
+  }
 }

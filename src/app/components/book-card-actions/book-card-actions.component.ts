@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Book } from '@src/app/models/book.model';
+import { MatDialog } from '@angular/material/dialog';
+import { BookCardDialogComponent } from '../book-card-dialog/book-card-dialog.component';
 
 @Component({
   selector: 'app-book-card-actions',
@@ -8,9 +10,9 @@ import { Book } from '@src/app/models/book.model';
 })
 export class BookCardActionsComponent implements OnInit {
   @Input() book: Book;
-  @Input() extended: boolean;
+  @Input() actions: string[];
 
-  constructor() {}
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {}
 
@@ -30,5 +32,21 @@ export class BookCardActionsComponent implements OnInit {
   addToLibrary() {
     // TODO: Update in library service
     this.book.added = !this.book.added;
+  }
+
+  openDialog() {
+    this.dialog.open(BookCardDialogComponent, {
+      data: {
+        book: this.book,
+      },
+    });
+  }
+
+  closeDialog() {
+    this.dialog.closeAll();
+  }
+
+  showAction(action: string): boolean {
+    return this.actions.includes(action);
   }
 }
