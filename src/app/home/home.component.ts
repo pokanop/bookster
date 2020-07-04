@@ -11,4 +11,8 @@ export class HomeComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {}
+
+  foxSay() {
+    window.open('https://www.youtube.com/watch?v=jofNR_WkoCE', '_blank');
+  }
 }
