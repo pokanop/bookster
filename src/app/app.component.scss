@@ -47,6 +47,8 @@ $warn: mat-color($app-warn);
 }
 
 .page-content {
+  margin: auto;
+  max-width: 1024px;
   padding: 20px;
 }
 
