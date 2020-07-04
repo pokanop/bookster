@@ -1,0 +1,22 @@
+<mat-card-actions>
+  <button mat-icon-button *ngIf="!extended">
+    <mat-icon>zoom_in</mat-icon>
+  </button>
+  <button mat-icon-button (click)="addToLibrary()" *ngIf="extended">
+    <mat-icon>{{ addIcon() }}</mat-icon>
+  </button>
+  <button
+    mat-icon-button
+    class="favorite"
+    (click)="toggleFavorite()"
+    *ngIf="extended"
+  >
+    <mat-icon>{{ favoriteIcon() }}</mat-icon>
+  </button>
+  <button mat-icon-button>
+    <mat-icon>cloud_download</mat-icon>
+  </button>
+  <button mat-icon-button>
+    <mat-icon>share</mat-icon>
+  </button>
+</mat-card-actions>

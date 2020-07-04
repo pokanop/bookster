@@ -1,5 +1,5 @@
 <mat-card>
-  <mat-card-header>
+  <mat-card-header *ngIf="extended">
     <mat-card-title>{{ book.title }}</mat-card-title>
     <mat-card-subtitle>{{ book.author }}</mat-card-subtitle>
   </mat-card-header>
@@ -7,15 +7,8 @@
   <mat-card-content *ngIf="extended">
     <p>{{ book.description }}</p>
   </mat-card-content>
-  <mat-card-actions>
-    <button mat-icon-button (click)="addToLibrary()">
-      <mat-icon>{{ addIcon() }}</mat-icon>
-    </button>
-    <button mat-icon-button class="favorite" (click)="toggleFavorite()">
-      <mat-icon>{{ favoriteIcon() }}</mat-icon>
-    </button>
-    <button mat-icon-button>
-      <mat-icon>share</mat-icon>
-    </button>
-  </mat-card-actions>
+  <app-book-card-actions
+    [book]="book"
+    [extended]="extended"
+  ></app-book-card-actions>
 </mat-card>

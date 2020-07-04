@@ -1,9 +1,3 @@
-@import '../../app.component.scss';
-
-mat-card-actions {
-  .favorite {
-    color: $accent;
-  }
-
-  text-align: center;
+img.mat-card-image {
+  margin-bottom: 8px;
 }
