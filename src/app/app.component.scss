@@ -1,0 +1,45 @@
+@import '~@angular/material/theming';
+
+$app-primary: mat-palette($mat-indigo);
+$app-accent: mat-palette($mat-pink, 'A200');
+$app-warn: mat-palette($mat-red, '500');
+
+$primary: mat-color($app-primary);
+$accent: mat-color($app-accent);
+$warn: mat-color($app-warn);
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.menu-container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.menu-sidenav {
+  display: flex;
+  padding: 8px;
+  width: 200px;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  a {
+    width: 80%;
+    margin: 8px;
+  }
+}
+
+.menu-content {
+  width: 100%;
+  height: 100%;
+}
+
+.page-content {
+  padding: 20px;
+}

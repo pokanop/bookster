@@ -1,1 +1,26 @@
-<router-outlet></router-outlet>
+<mat-sidenav-container class="menu-container" [hasBackdrop]="hasBackdrop">
+  <mat-sidenav #sidenav class="menu-sidenav" [mode]="mode">
+    <a mat-raised-button color="primary" routerLink="/">Home</a>
+    <a mat-raised-button color="primary" routerLink="/library">Library</a>
+    <a mat-raised-button color="primary" routerLink="/books">Books</a>
+    <a mat-raised-button color="primary" routerLink="/friends">Friends</a>
+    <a mat-raised-button color="primary" routerLink="/profile">Profile</a>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="menu-content">
+    <mat-toolbar color="primary">
+      <button mat-icon-button aria-label="Menu" (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>{{ title }}</span>
+      <span class="spacer"></span>
+      <button mat-icon-button aria-label="Profile">
+        <mat-icon>face</mat-icon>
+      </button>
+    </mat-toolbar>
+
+    <div class="page-content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
