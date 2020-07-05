@@ -1,22 +1,48 @@
 <mat-sidenav-container class="menu-container" [hasBackdrop]="hasBackdrop">
   <mat-sidenav #sidenav class="menu-sidenav" [mode]="mode">
-    <a mat-raised-button color="primary" routerLink="/">
+    <a
+      mat-raised-button
+      color="primary"
+      routerLink="/"
+      routerLinkActive="mat-accent"
+      [routerLinkActiveOptions]="{ exact: true }"
+    >
       <mat-icon>home</mat-icon>
       <span>Home</span>
     </a>
-    <a mat-raised-button color="primary" routerLink="/library">
+    <a
+      mat-raised-button
+      color="primary"
+      routerLink="/library"
+      routerLinkActive="mat-accent"
+    >
       <mat-icon>view_agenda</mat-icon>
       <span>Library</span>
     </a>
-    <a mat-raised-button color="primary" routerLink="/books">
+    <a
+      mat-raised-button
+      color="primary"
+      routerLink="/books"
+      routerLinkActive="mat-accent"
+    >
       <mat-icon>book</mat-icon>
       <span>Books</span>
     </a>
-    <a mat-raised-button color="primary" routerLink="/friends">
+    <a
+      mat-raised-button
+      color="primary"
+      routerLink="/friends"
+      routerLinkActive="mat-accent"
+    >
       <mat-icon>people</mat-icon>
       <span>Friends</span>
     </a>
-    <a mat-raised-button color="primary" routerLink="/profile">
+    <a
+      mat-raised-button
+      color="primary"
+      routerLink="/profile"
+      routerLinkActive="mat-accent"
+    >
       <mat-icon>face</mat-icon>
       <span>Profile</span>
     </a>

@@ -6,6 +6,7 @@ import { Review } from './review.model';
 
 export class Book {
   constructor(
+    public id: string,
     public title: string,
     public author: Author,
     public summary: string,
@@ -23,6 +24,7 @@ export class Book {
 
   public static random(): Book {
     return new Book(
+      '3B4CC9E3-F76F-4048-BA7A-FF86D9704A50',
       'title',
       new Author('author', 'bio'),
       'summary',
