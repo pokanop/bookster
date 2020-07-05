@@ -8,7 +8,7 @@
   <a
     mat-icon-button
     *ngIf="showAction('book')"
-    routerLink="/books"
+    [routerLink]="['/books', book.id]"
     (click)="closeDialog()"
   >
     <mat-icon>book</mat-icon>

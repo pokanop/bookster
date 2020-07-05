@@ -12,6 +12,7 @@ import { BookCardListComponent } from '@src/app/components/book-card-list/book-c
 import { BookCardComponent } from '@src/app/components/book-card/book-card.component';
 import { BookCardActionsComponent } from '@src/app/components/book-card-actions/book-card-actions.component';
 import { BookCardDialogComponent } from '@src/app/components/book-card-dialog/book-card-dialog.component';
+import { BookComponent } from '@src/app/pages/book/book.component';
 
 // Uncomment and add to NgModule imports if you need to use two-way binding and/or HTTP wrapper
 // import { NativeScriptFormsModule, NativeScriptHttpClientModule } from '@nativescript/angular';
@@ -28,6 +29,7 @@ import { BookCardDialogComponent } from '@src/app/components/book-card-dialog/bo
     BookCardComponent,
     BookCardActionsComponent,
     BookCardDialogComponent,
+    BookComponent,
   ],
   imports: [NativeScriptModule, AppRoutingModule],
   providers: [],
