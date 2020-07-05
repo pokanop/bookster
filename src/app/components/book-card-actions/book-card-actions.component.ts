@@ -39,6 +39,7 @@ export class BookCardActionsComponent implements OnInit {
       data: {
         book: this.book,
       },
+      autoFocus: false,
     });
   }
 
