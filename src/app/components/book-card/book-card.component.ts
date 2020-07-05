@@ -7,6 +7,7 @@ import { Book } from '@src/app/models/book.model';
   styleUrls: ['./book-card.component.scss'],
 })
 export class BookCardComponent implements OnInit {
+  @Input() class: string;
   @Input() book: Book;
   @Input() extended: boolean;
 

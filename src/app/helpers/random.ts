@@ -21,7 +21,7 @@ export function randomBook(): Book {
     randomString(10),
     new Author(randomString(16), randomString(10), randomString(20)),
     randomString(40),
-    new URL('https://material.angular.io/assets/img/examples/shiba2.jpg'),
+    new URL(`https://picsum.photos/200?${new Date().getTime()}`),
     new URL(
       'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'
     ),

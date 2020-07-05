@@ -1,4 +1,13 @@
-img.mat-card-image {
+.mat-card.sm {
+  .mat-card-image {
+    height: 180px;
+  }
+
+  height: 200px;
+}
+
+.mat-card-image {
+  object-fit: cover;
   margin-bottom: 0;
 }
 

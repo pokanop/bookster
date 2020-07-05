@@ -40,6 +40,8 @@ export class BookCardActionsComponent implements OnInit {
         book: this.book,
       },
       autoFocus: false,
+      height: '640px',
+      width: '520px',
     });
   }
 

@@ -15,9 +15,12 @@ body {
 }
 
 .mat-dialog-container {
+  .mat-card-image {
+    height: 475px;
+  }
+
   margin: 0;
   padding: 0 !important;
-  max-width: 640px;
 }
 
 .mat-button-focus-overlay {

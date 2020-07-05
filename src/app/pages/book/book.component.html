@@ -1,1 +1,11 @@
-<h1>{{ book.title }}</h1>
+<div fxLayout="row" fxLayoutAlign="start">
+  <div fxFlex="30%">
+    <mat-card class="book-cover">
+      <img mat-card-image src="{{ book.imageUrl }}" alt="Photo of book" />
+    </mat-card>
+  </div>
+  <div fxFlex="70%">
+    <h1>{{ book.title }}</h1>
+    <h2>{{ book.author.name }}</h2>
+  </div>
+</div>
