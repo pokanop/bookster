@@ -4,6 +4,8 @@ import { Category } from '../models/category.enum';
 import { Publisher } from '../models/publisher.model';
 import { Language } from '../models/language.enum';
 
+var randomCounter = 0;
+
 export function randomString(length: number) {
   var result = '';
   var characters =
@@ -21,7 +23,7 @@ export function randomBook(): Book {
     randomString(10),
     new Author(randomString(16), randomString(10), randomString(20)),
     randomString(40),
-    new URL(`https://picsum.photos/200?${new Date().getTime()}`),
+    new URL(`https://picsum.photos/200?${randomCounter++}`),
     new URL(
       'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'
     ),
