@@ -62,7 +62,7 @@
       <button mat-icon-button aria-label="Menu" (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
       </button>
-      <span>{{ title }}</span>
+      <span routerLink="/" class="hover-accent">{{ title }}</span>
       <span class="spacer"></span>
       <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Profile">
         <mat-icon>face</mat-icon>
