@@ -20,7 +20,7 @@ export class BookCardComponent implements OnInit {
 
   bottomActions(): string[] {
     if (this.extended) {
-      return ['add', 'book', 'download', 'share'];
+      return ['add', 'book', 'author', 'download', 'share'];
     } else {
       return ['zoom', 'download', 'share'];
     }

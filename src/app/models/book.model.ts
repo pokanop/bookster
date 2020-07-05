@@ -26,7 +26,7 @@ export class Book {
     return new Book(
       '3B4CC9E3-F76F-4048-BA7A-FF86D9704A50',
       'title',
-      new Author('author', 'bio'),
+      new Author('E74EF29C-F56A-477B-AC59-64E6D5EF325A', 'author', 'bio'),
       'summary',
       new URL('https://material.angular.io/assets/img/examples/shiba2.jpg'),
       new URL(
