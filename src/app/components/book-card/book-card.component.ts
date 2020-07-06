@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Book } from '@src/app/models/book.model';
+import { MatDialog } from '@angular/material/dialog';
+import { BookCardDialogComponent } from '../book-card-dialog/book-card-dialog.component';
 
 @Component({
   selector: 'app-book-card',
@@ -10,8 +12,10 @@ export class BookCardComponent implements OnInit {
   @Input() class: string;
   @Input() book: Book;
   @Input() extended: boolean;
+  @Input() zoomDisabled: boolean = false;
+  rippleDisabled: boolean;
 
-  constructor() {}
+  constructor(public dialog: MatDialog) {}
 
   ngOnInit(): void {}
 
@@ -23,7 +27,29 @@ export class BookCardComponent implements OnInit {
     if (this.extended) {
       return ['add', 'book', 'author', 'download', 'share'];
     } else {
-      return ['zoom', 'download', 'share'];
+      return ['favorite', 'download', 'share'];
     }
+  }
+
+  openDialog() {
+    console.log(
+      `zoomDisabled: ${this.zoomDisabled}, rippleDisabled: ${this.rippleDisabled}`
+    );
+    if (this.zoomDisabled || this.rippleDisabled) {
+      return;
+    }
+
+    this.dialog.open(BookCardDialogComponent, {
+      data: {
+        book: this.book,
+      },
+      autoFocus: false,
+      height: '640px',
+      width: '520px',
+    });
+  }
+
+  onRippleDisabled(disabled: boolean) {
+    this.rippleDisabled = disabled;
   }
 }

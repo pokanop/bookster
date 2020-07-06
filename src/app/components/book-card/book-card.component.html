@@ -1,4 +1,9 @@
-<mat-card [ngClass]="class">
+<mat-card
+  [ngClass]="class"
+  matRipple
+  [matRippleDisabled]="rippleDisabled"
+  (click)="openDialog()"
+>
   <div fxLayout="row" fxLayoutAlign="stretch" *ngIf="extended">
     <div fxFlex="50%">
       <mat-card-title>{{ book.title }}</mat-card-title>
@@ -8,6 +13,7 @@
       <app-book-card-actions
         [book]="book"
         [actions]="topActions()"
+        (rippleDisabled)="onRippleDisabled($event)"
         class="float-right"
       ></app-book-card-actions>
     </div>
@@ -19,5 +25,6 @@
   <app-book-card-actions
     [book]="book"
     [actions]="bottomActions()"
+    (rippleDisabled)="onRippleDisabled($event)"
   ></app-book-card-actions>
 </mat-card>

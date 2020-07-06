@@ -26,6 +26,7 @@ import { BookCardDialogComponent } from '@src/app/components/book-card-dialog/bo
 import { BookComponent } from '@src/app/pages/book/book.component';
 import { AuthorsComponent } from '@src/app/pages/authors/authors.component';
 import { AuthorComponent } from '@src/app/pages/author/author.component';
+import { StopPropagationDirective } from './directives/stop-propagation.directive';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { AuthorComponent } from '@src/app/pages/author/author.component';
     BookComponent,
     AuthorsComponent,
     AuthorComponent,
+    StopPropagationDirective,
   ],
   imports: [
     BrowserModule,

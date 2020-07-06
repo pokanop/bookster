@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Book } from '@src/app/models/book.model';
 import { MatDialog } from '@angular/material/dialog';
 import { BookCardDialogComponent } from '../book-card-dialog/book-card-dialog.component';
@@ -11,6 +11,7 @@ import { BookCardDialogComponent } from '../book-card-dialog/book-card-dialog.co
 export class BookCardActionsComponent implements OnInit {
   @Input() book: Book;
   @Input() actions: string[];
+  @Output() rippleDisabled = new EventEmitter<boolean>();
 
   constructor(public dialog: MatDialog) {}
 
@@ -34,16 +35,9 @@ export class BookCardActionsComponent implements OnInit {
     this.book.added = !this.book.added;
   }
 
-  openDialog() {
-    this.dialog.open(BookCardDialogComponent, {
-      data: {
-        book: this.book,
-      },
-      autoFocus: false,
-      height: '640px',
-      width: '520px',
-    });
-  }
+  download() {}
+
+  share() {}
 
   closeDialog() {
     this.dialog.closeAll();
@@ -51,5 +45,13 @@ export class BookCardActionsComponent implements OnInit {
 
   showAction(action: string): boolean {
     return this.actions.includes(action);
+  }
+
+  disableRipple() {
+    this.rippleDisabled.emit(true);
+  }
+
+  enableRipple() {
+    this.rippleDisabled.emit(false);
   }
 }
