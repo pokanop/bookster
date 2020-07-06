@@ -2,7 +2,6 @@
   <mat-sidenav #sidenav class="menu-sidenav" [mode]="mode">
     <a
       mat-raised-button
-      color="primary"
       routerLink="/"
       routerLinkActive="mat-accent"
       [routerLinkActiveOptions]="{ exact: true }"
@@ -10,48 +9,23 @@
       <mat-icon>home</mat-icon>
       <span>Home</span>
     </a>
-    <a
-      mat-raised-button
-      color="primary"
-      routerLink="/library"
-      routerLinkActive="mat-accent"
-    >
+    <a mat-raised-button routerLink="/library" routerLinkActive="mat-accent">
       <mat-icon>view_agenda</mat-icon>
       <span>Library</span>
     </a>
-    <a
-      mat-raised-button
-      color="primary"
-      routerLink="/books"
-      routerLinkActive="mat-accent"
-    >
+    <a mat-raised-button routerLink="/books" routerLinkActive="mat-accent">
       <mat-icon>book</mat-icon>
       <span>Books</span>
     </a>
-    <a
-      mat-raised-button
-      color="primary"
-      routerLink="/authors"
-      routerLinkActive="mat-accent"
-    >
+    <a mat-raised-button routerLink="/authors" routerLinkActive="mat-accent">
       <mat-icon>create</mat-icon>
       <span>Authors</span>
     </a>
-    <a
-      mat-raised-button
-      color="primary"
-      routerLink="/friends"
-      routerLinkActive="mat-accent"
-    >
+    <a mat-raised-button routerLink="/friends" routerLinkActive="mat-accent">
       <mat-icon>people</mat-icon>
       <span>Friends</span>
     </a>
-    <a
-      mat-raised-button
-      color="primary"
-      routerLink="/profile"
-      routerLinkActive="mat-accent"
-    >
+    <a mat-raised-button routerLink="/profile" routerLinkActive="mat-accent">
       <mat-icon>face</mat-icon>
       <span>Profile</span>
     </a>

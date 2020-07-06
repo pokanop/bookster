@@ -9,7 +9,7 @@ var randomCounter = 0;
 export function randomString(length: number) {
   var result = '';
   var characters =
-    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 ';
   var charactersLength = characters.length;
   for (var i = 0; i < length; i++) {
     result += characters.charAt(Math.floor(Math.random() * charactersLength));
@@ -23,7 +23,9 @@ export function randomBook(): Book {
     randomString(10),
     randomString(24),
     new Author(randomString(16), randomString(10), randomString(20)),
-    randomString(40),
+    randomString(500),
+    Math.ceil(Math.random() * 500),
+    Math.ceil(Math.random() * 100000000),
     new URL(`https://picsum.photos/200?${randomCounter++}`),
     new URL(
       'https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf'

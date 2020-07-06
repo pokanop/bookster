@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Author } from '@src/app/models/author.model';
 import { Observable, Subscription } from 'rxjs';
 import { ActivatedRoute, ParamMap } from '@angular/router';
@@ -10,7 +10,7 @@ import { AuthorService } from '@src/app/services/author.service';
   templateUrl: './author.component.html',
   styleUrls: ['./author.component.scss'],
 })
-export class AuthorComponent implements OnInit {
+export class AuthorComponent implements OnInit, OnDestroy {
   author: Author;
   private subscription: Subscription;
 
@@ -29,5 +29,9 @@ export class AuthorComponent implements OnInit {
         })
       )
       .subscribe((author) => (this.author = author));
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
   }
 }

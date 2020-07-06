@@ -1,12 +1,12 @@
 <mat-card-actions>
   <button
     mat-icon-button
-    (click.stop)="addToLibrary()"
+    (click.stop)="toggleLibrary()"
     *ngIf="showAction('add')"
     (mousedown)="disableRipple()"
     (mouseup)="enableRipple()"
   >
-    <mat-icon>{{ addIcon() }}</mat-icon>
+    <mat-icon>{{ libraryIcon() }}</mat-icon>
   </button>
   <a
     mat-icon-button

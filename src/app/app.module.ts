@@ -12,6 +12,8 @@ import { MatCardModule } from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatListModule } from '@angular/material/list';
+import { NgxFilesizeModule } from 'ngx-filesize';
 
 import { AppRoutingModule } from '@src/app/app-routing.module';
 import { AppComponent } from '@src/app/app.component';
@@ -27,7 +29,7 @@ import { BookCardDialogComponent } from '@src/app/components/book-card-dialog/bo
 import { BookComponent } from '@src/app/pages/book/book.component';
 import { AuthorsComponent } from '@src/app/pages/authors/authors.component';
 import { AuthorComponent } from '@src/app/pages/author/author.component';
-import { StopPropagationDirective } from './directives/stop-propagation.directive';
+import { StopPropagationDirective } from '@src/app/directives/stop-propagation.directive';
 
 @NgModule({
   declarations: [
@@ -60,6 +62,8 @@ import { StopPropagationDirective } from './directives/stop-propagation.directiv
     MatRippleModule,
     MatDialogModule,
     MatSnackBarModule,
+    MatListModule,
+    NgxFilesizeModule,
     AppRoutingModule,
   ],
   entryComponents: [BookCardDialogComponent],

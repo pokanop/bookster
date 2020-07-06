@@ -22,7 +22,7 @@ export class BookCardActionsComponent implements OnInit {
     return this.book.favorite ? 'favorite' : 'favorite_border';
   }
 
-  addIcon(): string {
+  libraryIcon(): string {
     return this.book.added ? 'done' : 'add';
   }
 
@@ -32,7 +32,7 @@ export class BookCardActionsComponent implements OnInit {
     this.showSnackBar('favorites', this.book.favorite);
   }
 
-  addToLibrary() {
+  toggleLibrary() {
     // TODO: Update in library service
     this.book.added = !this.book.added;
     this.showSnackBar('library', this.book.added);

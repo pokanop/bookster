@@ -35,4 +35,36 @@ export class BookComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     // this.subscription.unsubscribe();
   }
+
+  toggleFavorite() {
+    this.book.favorite = !this.book.favorite;
+  }
+
+  toggleLibrary() {
+    this.book.added = !this.book.added;
+  }
+
+  favoriteText(): string {
+    return this.book.favorite ? 'Remove from favorites' : 'Add to favorites';
+  }
+
+  libraryText(): string {
+    return this.book.added ? 'Remove from library' : 'Add to library';
+  }
+
+  favoriteColor(): string {
+    return this.book.favorite ? 'accent' : '';
+  }
+
+  libraryColor(): string {
+    return this.book.added ? 'accent' : '';
+  }
+
+  favoriteIcon(): string {
+    return this.book.favorite ? 'favorite' : 'favorite_border';
+  }
+
+  libraryIcon(): string {
+    return this.book.added ? 'done' : 'add';
+  }
 }

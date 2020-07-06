@@ -11,6 +11,8 @@ export class Book {
     public subtitle: string,
     public author: Author,
     public summary: string,
+    public pageCount: number,
+    public fileSize: number,
     public imageUrl: URL,
     public downloadUrl: URL,
     public favorite: boolean,

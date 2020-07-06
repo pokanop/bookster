@@ -1,12 +1,123 @@
 <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px">
   <div fxFlex="30%">
-    <mat-card class="book-cover" matRipple>
-      <img mat-card-image src="{{ book.imageUrl }}" alt="Photo of book" />
-    </mat-card>
+    <div fxLayout="column" fxLayoutAlign="center" fxLayoutGap="16px">
+      <mat-card class="book-cover" matRipple>
+        <img mat-card-image src="{{ book.imageUrl }}" alt="Photo of book" />
+      </mat-card>
+      <a
+        mat-raised-button
+        href="https://google.com"
+        target="_blank"
+        class="side-button"
+      >
+        <mat-icon>cloud_download</mat-icon>
+        <span>Download</span>
+      </a>
+      <button
+        mat-raised-button
+        disableRipple
+        [color]="favoriteColor()"
+        class="side-button"
+        (click)="toggleFavorite()"
+      >
+        <mat-icon>{{ favoriteIcon() }}</mat-icon>
+        <span>{{ favoriteText() }}</span>
+      </button>
+      <button
+        mat-raised-button
+        disableRipple
+        [color]="libraryColor()"
+        class="side-button"
+        (click)="toggleLibrary()"
+      >
+        <mat-icon>{{ libraryIcon() }}</mat-icon>
+        <span>{{ libraryText() }}</span>
+      </button>
+      <button mat-raised-button color="primary" class="side-button">
+        <mat-icon>subject</mat-icon>
+        <span>Read this Book</span>
+      </button>
+    </div>
   </div>
+
   <div fxFlex="70%">
     <h1>{{ book.title }}</h1>
-    <h2>{{ book.subtitle }}</h2>
-    <h3 [routerLink]="['/authors', book.author.id]">{{ book.author.name }}</h3>
+    <h2 *ngIf="book.subtitle">{{ book.subtitle }}</h2>
+    <h3 [routerLink]="['/authors', book.author.id]" class="author">
+      {{ book.author.name }}
+    </h3>
+    <p>Ratings Widget</p>
+    <p>Published on {{ book.releaseDate | date }}</p>
+
+    <mat-divider></mat-divider>
+
+    <h2>About the Book</h2>
+    <p>{{ book.summary }}</p>
+    <h2>Information</h2>
+
+    <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="8px">
+      <div fxFlex="50%">
+        <mat-list>
+          <mat-list-item>
+            <mat-icon mat-list-icon>language</mat-icon>
+            <div mat-line>Language</div>
+            <div mat-line>{{ book.language }}</div>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon>category</mat-icon>
+            <div mat-line>Categories</div>
+            <div mat-line>{{ book.categories.join(', ') }}</div>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon>business</mat-icon>
+            <div mat-line>Publisher</div>
+            <div mat-line>{{ book.publisher.name }}</div>
+          </mat-list-item>
+        </mat-list>
+      </div>
+      <div fxFlex="50%">
+        <mat-list>
+          <mat-list-item>
+            <mat-icon mat-list-icon>event</mat-icon>
+            <div mat-line>Published</div>
+            <div mat-line>{{ book.releaseDate | date }}</div>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon>layers</mat-icon>
+            <div mat-line>Pages</div>
+            <div mat-line>{{ book.pageCount }}</div>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon mat-list-icon>storage</mat-icon>
+            <div mat-line>Size</div>
+            <div mat-line>{{ book.fileSize | filesize }}</div>
+          </mat-list-item>
+        </mat-list>
+      </div>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <h2>Recommended By</h2>
+
+    <mat-divider></mat-divider>
+
+    <h2>Share this Book</h2>
+
+    <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="16px">
+      <button mat-fab color="twitter" aria-label="Twitter share button">
+        <mat-icon fontSet="fab" fontIcon="fa-twitter"></mat-icon>
+      </button>
+      <button mat-fab color="facebook" aria-label="Facebook share button">
+        <mat-icon fontSet="fab" fontIcon="fa-facebook-f"></mat-icon>
+      </button>
+      <button mat-fab color="linkedin" aria-label="Facebook share button">
+        <mat-icon fontSet="fab" fontIcon="fa-linkedin-in"></mat-icon>
+      </button>
+    </div>
+
+    <mat-divider></mat-divider>
+
+    <h2>Similar Books</h2>
   </div>
 </div>

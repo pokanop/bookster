@@ -1,3 +1,5 @@
+@import '../../app.component.scss';
+
 .book-cover.mat-card {
   .mat-card-image {
     border-bottom-left-radius: inherit;
@@ -7,4 +9,49 @@
   }
 
   height: 400px;
+}
+
+.author {
+  cursor: pointer;
+  color: $accent;
+}
+
+.author:focus {
+  outline: none;
+}
+
+a.side-button {
+  color: $primary;
+}
+
+.side-button {
+  mat-icon {
+    position: absolute;
+    left: 16px;
+    top: 6px;
+  }
+}
+
+.mat-fab {
+  font-size: 22px;
+}
+
+.mat-twitter {
+  color: white;
+  background-color: #1da1f2;
+}
+
+.mat-facebook {
+  color: white;
+  background-color: #3b5998;
+}
+
+.mat-linkedin {
+  color: white;
+  background-color: #0077b5;
+}
+
+mat-divider {
+  margin-top: 24px;
+  margin-bottom: 16px;
 }
