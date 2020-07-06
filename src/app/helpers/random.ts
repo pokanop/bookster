@@ -21,6 +21,7 @@ export function randomBook(): Book {
   return new Book(
     randomString(16),
     randomString(10),
+    randomString(24),
     new Author(randomString(16), randomString(10), randomString(20)),
     randomString(40),
     new URL(`https://picsum.photos/200?${randomCounter++}`),

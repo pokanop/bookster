@@ -2,6 +2,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Book } from '@src/app/models/book.model';
 import { MatDialog } from '@angular/material/dialog';
 import { BookCardDialogComponent } from '../book-card-dialog/book-card-dialog.component';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-book-card-actions',
@@ -13,7 +14,7 @@ export class BookCardActionsComponent implements OnInit {
   @Input() actions: string[];
   @Output() rippleDisabled = new EventEmitter<boolean>();
 
-  constructor(public dialog: MatDialog) {}
+  constructor(private dialog: MatDialog, private snackBar: MatSnackBar) {}
 
   ngOnInit(): void {}
 
@@ -28,11 +29,13 @@ export class BookCardActionsComponent implements OnInit {
   toggleFavorite() {
     // TODO: Persist this change
     this.book.favorite = !this.book.favorite;
+    this.showSnackBar('favorites', this.book.favorite);
   }
 
   addToLibrary() {
     // TODO: Update in library service
     this.book.added = !this.book.added;
+    this.showSnackBar('library', this.book.added);
   }
 
   download() {}
@@ -53,5 +56,17 @@ export class BookCardActionsComponent implements OnInit {
 
   enableRipple() {
     this.rippleDisabled.emit(false);
+  }
+
+  private showSnackBar(collection: string, added: boolean) {
+    this.snackBar.open(
+      `${added ? 'Added' : 'Removed'} book ${
+        added ? 'to' : 'from'
+      } ${collection}`,
+      null,
+      {
+        duration: 2000,
+      }
+    );
   }
 }

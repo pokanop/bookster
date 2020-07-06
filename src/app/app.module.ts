@@ -11,6 +11,7 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatCardModule } from '@angular/material/card';
 import { MatRippleModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { AppRoutingModule } from '@src/app/app-routing.module';
 import { AppComponent } from '@src/app/app.component';
@@ -58,6 +59,7 @@ import { StopPropagationDirective } from './directives/stop-propagation.directiv
     MatCardModule,
     MatRippleModule,
     MatDialogModule,
+    MatSnackBarModule,
     AppRoutingModule,
   ],
   entryComponents: [BookCardDialogComponent],

@@ -1,11 +1,12 @@
-<div fxLayout="row" fxLayoutAlign="start">
+<div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px">
   <div fxFlex="30%">
-    <mat-card class="book-cover">
+    <mat-card class="book-cover" matRipple>
       <img mat-card-image src="{{ book.imageUrl }}" alt="Photo of book" />
     </mat-card>
   </div>
   <div fxFlex="70%">
     <h1>{{ book.title }}</h1>
-    <h2>{{ book.author.name }}</h2>
+    <h2>{{ book.subtitle }}</h2>
+    <h3 [routerLink]="['/authors', book.author.id]">{{ book.author.name }}</h3>
   </div>
 </div>

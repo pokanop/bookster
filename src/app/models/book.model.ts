@@ -8,6 +8,7 @@ export class Book {
   constructor(
     public id: string,
     public title: string,
+    public subtitle: string,
     public author: Author,
     public summary: string,
     public imageUrl: URL,

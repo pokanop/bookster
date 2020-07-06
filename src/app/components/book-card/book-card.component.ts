@@ -32,9 +32,6 @@ export class BookCardComponent implements OnInit {
   }
 
   openDialog() {
-    console.log(
-      `zoomDisabled: ${this.zoomDisabled}, rippleDisabled: ${this.rippleDisabled}`
-    );
     if (this.zoomDisabled || this.rippleDisabled) {
       return;
     }
