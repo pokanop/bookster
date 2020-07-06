@@ -16,7 +16,12 @@ body {
 
 .mat-dialog-container {
   .mat-card-image {
-    height: 475px;
+    height: 420px;
+  }
+
+  .mat-card-content {
+    height: 75px;
+    overflow-y: hidden;
   }
 
   margin: 0;
