@@ -15,6 +15,7 @@ import { BookCardDialogComponent } from '@src/app/components/book-card-dialog/bo
 import { BookComponent } from '@src/app/pages/book/book.component';
 import { AuthorsComponent } from '@src/app/pages/authors/authors.component';
 import { AuthorComponent } from '@src/app/pages/author/author.component';
+import { RatingComponent } from '@src/app/components/rating/rating.component';
 
 // Uncomment and add to NgModule imports if you need to use two-way binding and/or HTTP wrapper
 // import { NativeScriptFormsModule, NativeScriptHttpClientModule } from '@nativescript/angular';
@@ -34,6 +35,7 @@ import { AuthorComponent } from '@src/app/pages/author/author.component';
     BookComponent,
     AuthorsComponent,
     AuthorComponent,
+    RatingComponent,
   ],
   imports: [NativeScriptModule, AppRoutingModule],
   providers: [],

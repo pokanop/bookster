@@ -13,6 +13,7 @@ import { MatRippleModule } from '@angular/material/core';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatListModule } from '@angular/material/list';
+import { MatTooltipModule } from '@angular/material/tooltip';
 import { NgxFilesizeModule } from 'ngx-filesize';
 
 import { AppRoutingModule } from '@src/app/app-routing.module';
@@ -30,6 +31,7 @@ import { BookComponent } from '@src/app/pages/book/book.component';
 import { AuthorsComponent } from '@src/app/pages/authors/authors.component';
 import { AuthorComponent } from '@src/app/pages/author/author.component';
 import { StopPropagationDirective } from '@src/app/directives/stop-propagation.directive';
+import { RatingComponent } from '@src/app/components/rating/rating.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,7 @@ import { StopPropagationDirective } from '@src/app/directives/stop-propagation.d
     AuthorsComponent,
     AuthorComponent,
     StopPropagationDirective,
+    RatingComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +66,7 @@ import { StopPropagationDirective } from '@src/app/directives/stop-propagation.d
     MatDialogModule,
     MatSnackBarModule,
     MatListModule,
+    MatTooltipModule,
     NgxFilesizeModule,
     AppRoutingModule,
   ],

@@ -46,7 +46,9 @@
     <h3 [routerLink]="['/authors', book.author.id]" class="author">
       {{ book.author.name }}
     </h3>
-    <p>Ratings Widget</p>
+
+    <app-rating></app-rating>
+
     <p>Published on {{ book.releaseDate | date }}</p>
 
     <mat-divider></mat-divider>
