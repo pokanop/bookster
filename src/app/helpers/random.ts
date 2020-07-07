@@ -20,8 +20,11 @@ export function randomString(length: number) {
   return result;
 }
 
-export function randomBook(author: Author = randomAuthor()): Book {
-  return new Book(
+export function randomBook(
+  author: Author = randomAuthor(),
+  similar: boolean = true
+): Book {
+  let book = new Book(
     randomString(16),
     randomString(10),
     randomString(24),
@@ -41,6 +44,16 @@ export function randomBook(author: Author = randomAuthor()): Book {
     Language.English,
     []
   );
+
+  if (similar) {
+    book.similarBooks = [
+      randomBook(author, false),
+      randomBook(author, false),
+      randomBook(author, false),
+    ];
+  }
+
+  return book;
 }
 
 export function randomBooks(count: number): Book[] {

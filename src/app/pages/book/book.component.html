@@ -60,76 +60,88 @@
 
     <mat-divider></mat-divider>
 
-    <h2>About the Book</h2>
-    <p>{{ book.summary }}</p>
+    <section>
+      <h2>About the Book</h2>
+      <p>{{ book.summary }}</p>
+    </section>
 
     <mat-divider></mat-divider>
 
-    <h2>Information</h2>
+    <section>
+      <h2>Information</h2>
 
-    <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="8px">
-      <div fxFlex="50%">
-        <mat-list>
-          <mat-list-item>
-            <mat-icon mat-list-icon>language</mat-icon>
-            <div mat-line>Language</div>
-            <div mat-line>{{ book.language }}</div>
-          </mat-list-item>
-          <mat-list-item>
-            <mat-icon mat-list-icon>category</mat-icon>
-            <div mat-line>Categories</div>
-            <div mat-line>{{ book.categories.join(', ') }}</div>
-          </mat-list-item>
-          <mat-list-item>
-            <mat-icon mat-list-icon>business</mat-icon>
-            <div mat-line>Publisher</div>
-            <div mat-line>{{ book.publisher.name }}</div>
-          </mat-list-item>
-        </mat-list>
+      <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="8px">
+        <div fxFlex="50%">
+          <mat-list>
+            <mat-list-item>
+              <mat-icon mat-list-icon>language</mat-icon>
+              <div mat-line>Language</div>
+              <div mat-line>{{ book.language }}</div>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon mat-list-icon>category</mat-icon>
+              <div mat-line>Categories</div>
+              <div mat-line>{{ book.categories.join(', ') }}</div>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon mat-list-icon>business</mat-icon>
+              <div mat-line>Publisher</div>
+              <div mat-line>{{ book.publisher.name }}</div>
+            </mat-list-item>
+          </mat-list>
+        </div>
+        <div fxFlex="50%">
+          <mat-list>
+            <mat-list-item>
+              <mat-icon mat-list-icon>event</mat-icon>
+              <div mat-line>Published</div>
+              <div mat-line>{{ book.releaseDate | date }}</div>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon mat-list-icon>menu_book</mat-icon>
+              <div mat-line>Pages</div>
+              <div mat-line>{{ book.pageCount }}</div>
+            </mat-list-item>
+            <mat-list-item>
+              <mat-icon mat-list-icon>storage</mat-icon>
+              <div mat-line>Size</div>
+              <div mat-line>{{ book.fileSize | filesize }}</div>
+            </mat-list-item>
+          </mat-list>
+        </div>
       </div>
-      <div fxFlex="50%">
-        <mat-list>
-          <mat-list-item>
-            <mat-icon mat-list-icon>event</mat-icon>
-            <div mat-line>Published</div>
-            <div mat-line>{{ book.releaseDate | date }}</div>
-          </mat-list-item>
-          <mat-list-item>
-            <mat-icon mat-list-icon>menu_book</mat-icon>
-            <div mat-line>Pages</div>
-            <div mat-line>{{ book.pageCount }}</div>
-          </mat-list-item>
-          <mat-list-item>
-            <mat-icon mat-list-icon>storage</mat-icon>
-            <div mat-line>Size</div>
-            <div mat-line>{{ book.fileSize | filesize }}</div>
-          </mat-list-item>
-        </mat-list>
+    </section>
+
+    <mat-divider></mat-divider>
+
+    <section>
+      <h2>Recommended By</h2>
+    </section>
+
+    <mat-divider></mat-divider>
+
+    <section>
+      <h2>Share this Book</h2>
+
+      <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="16px">
+        <button mat-fab color="twitter" aria-label="Twitter share button">
+          <mat-icon fontSet="fab" fontIcon="fa-twitter"></mat-icon>
+        </button>
+        <button mat-fab color="facebook" aria-label="Facebook share button">
+          <mat-icon fontSet="fab" fontIcon="fa-facebook-f"></mat-icon>
+        </button>
+        <button mat-fab color="linkedin" aria-label="Facebook share button">
+          <mat-icon fontSet="fab" fontIcon="fa-linkedin-in"></mat-icon>
+        </button>
       </div>
-    </div>
+    </section>
 
     <mat-divider></mat-divider>
 
-    <h2>Recommended By</h2>
+    <section>
+      <h2>Similar Books</h2>
 
-    <mat-divider></mat-divider>
-
-    <h2>Share this Book</h2>
-
-    <div fxLayout="row" fxLayoutAlign="center" fxLayoutGap="16px">
-      <button mat-fab color="twitter" aria-label="Twitter share button">
-        <mat-icon fontSet="fab" fontIcon="fa-twitter"></mat-icon>
-      </button>
-      <button mat-fab color="facebook" aria-label="Facebook share button">
-        <mat-icon fontSet="fab" fontIcon="fa-facebook-f"></mat-icon>
-      </button>
-      <button mat-fab color="linkedin" aria-label="Facebook share button">
-        <mat-icon fontSet="fab" fontIcon="fa-linkedin-in"></mat-icon>
-      </button>
-    </div>
-
-    <mat-divider></mat-divider>
-
-    <h2>Similar Books</h2>
+      <app-book-card-list [books]="book.similarBooks"></app-book-card-list>
+    </section>
   </div>
 </div>
