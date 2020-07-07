@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Book } from '../models/book.model';
 import { randomBooks } from '../helpers/random';
 import { AuthorService } from './author.service';
+import { Category } from '../models/category.enum';
 
 @Injectable({
   providedIn: 'root',
@@ -28,7 +29,11 @@ export class BookService {
       author.books.push(book);
       author.books = author.books.concat(this.randomBooksFromBooks(books, 5));
       author.categories = [];
-      author.categories = author.categories.concat(book.categories);
+      author.categories = author.categories.concat([
+        Category.ActionAdventure,
+        Category.Crime,
+        Category.Fantasy,
+      ]);
       book.author.id = author.id;
       map.set(book.id, book);
     });
