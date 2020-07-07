@@ -4,6 +4,8 @@ import { Category } from '../models/category.enum';
 import { Publisher } from '../models/publisher.model';
 import { Language } from '../models/language.enum';
 import { User } from '../models/user.model';
+import { Library } from '../models/library.model';
+import { Collection } from '../models/collection.model';
 
 var randomCounter = 0;
 
@@ -18,12 +20,12 @@ export function randomString(length: number) {
   return result;
 }
 
-export function randomBook(): Book {
+export function randomBook(author: Author = randomAuthor()): Book {
   return new Book(
     randomString(16),
     randomString(10),
     randomString(24),
-    new Author(randomString(16), randomString(10), randomString(20)),
+    author,
     randomString(500),
     Math.ceil(Math.random() * 500),
     Math.ceil(Math.random() * 100000000),
@@ -50,14 +52,16 @@ export function randomBooks(count: number): Book[] {
 }
 
 export function randomAuthor(): Author {
-  return new Author(
+  let author = new Author(
     randomString(16),
     randomString(10),
     randomString(500),
     new URL('https://www.w3schools.com/howto/img_avatar.png'),
-    [randomBook(), randomBook(), randomBook()],
+    [],
     [Category.ActionAdventure, Category.Crime, Category.Fantasy]
   );
+  author.books = [randomBook(author), randomBook(author), randomBook(author)];
+  return author;
 }
 
 export function randomAuthors(count: number): Author[] {
@@ -74,7 +78,8 @@ export function randomUser(): User {
     randomString(10),
     randomString(10),
     randomString(250),
-    new URL('https://www.w3schools.com/howto/img_avatar.png')
+    new URL('https://www.w3schools.com/howto/img_avatar.png'),
+    randomLibrary()
   );
 }
 
@@ -84,4 +89,30 @@ export function randomUsers(count: number): User[] {
     users.push(randomUser());
   }
   return users;
+}
+
+export function randomLibrary(): Library {
+  let books = randomBooks(50);
+  return new Library(books, randomElements(books, 10), randomCollections(5));
+}
+
+export function randomCollection(): Collection {
+  return new Collection(randomString(10), randomBooks(10));
+}
+
+export function randomCollections(count: number): Collection[] {
+  let collections: Collection[] = [];
+  for (let i = 0; i < count; i++) {
+    collections.push(randomCollection());
+  }
+  return collections;
+}
+
+export function randomElements(items: any[], count: number): any[] {
+  let out: any[] = [];
+  for (let i = 0; i < count; i++) {
+    let index = Math.floor(Math.random() * items.length);
+    out.push(items[index]);
+  }
+  return out;
 }

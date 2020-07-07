@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Book } from '../models/book.model';
-import { randomBooks } from '../helpers/random';
+import { randomBooks, randomElements } from '../helpers/random';
 import { AuthorService } from './author.service';
 import { Category } from '../models/category.enum';
 
@@ -17,7 +17,7 @@ export class BookService {
   }
 
   getRandomBooks(count: number): Book[] {
-    return this.randomBooksFromBooks(Array.from(this.books.values()), count);
+    return randomElements(Array.from(this.books.values()), count);
   }
 
   private seedBooks(): Map<string, Book> {
@@ -27,7 +27,7 @@ export class BookService {
       let author = this.authorService.getRandomAuthor();
       author.books = [];
       author.books.push(book);
-      author.books = author.books.concat(this.randomBooksFromBooks(books, 5));
+      author.books = author.books.concat(randomElements(books, 5));
       author.categories = [];
       author.categories = author.categories.concat([
         Category.ActionAdventure,
@@ -38,14 +38,5 @@ export class BookService {
       map.set(book.id, book);
     });
     return map;
-  }
-
-  private randomBooksFromBooks(books: Book[], count: number): Book[] {
-    let outBooks: Book[] = [];
-    for (let i = 0; i < count; i++) {
-      let index = Math.floor(Math.random() * books.length);
-      outBooks.push(books[index]);
-    }
-    return outBooks;
   }
 }
