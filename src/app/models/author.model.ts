@@ -1,7 +1,10 @@
 import { Category } from './category.enum';
 import { Book } from './book.model';
+import { Person } from './person';
 
-export class Author {
+export class Author implements Person {
+  public kind = 'author';
+
   constructor(
     public id: string,
     public name: string,

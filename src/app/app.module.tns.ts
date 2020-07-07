@@ -16,6 +16,8 @@ import { BookComponent } from '@src/app/pages/book/book.component';
 import { AuthorsComponent } from '@src/app/pages/authors/authors.component';
 import { AuthorComponent } from '@src/app/pages/author/author.component';
 import { RatingComponent } from '@src/app/components/rating/rating.component';
+import { HeroPanelComponent } from '@src/app/components/hero-panel/hero-panel.component';
+import { HeroImageComponent } from '@src/app/components/hero-image/hero-image.component';
 
 // Uncomment and add to NgModule imports if you need to use two-way binding and/or HTTP wrapper
 // import { NativeScriptFormsModule, NativeScriptHttpClientModule } from '@nativescript/angular';
@@ -36,6 +38,8 @@ import { RatingComponent } from '@src/app/components/rating/rating.component';
     AuthorsComponent,
     AuthorComponent,
     RatingComponent,
+    HeroPanelComponent,
+    HeroImageComponent,
   ],
   imports: [NativeScriptModule, AppRoutingModule],
   providers: [],

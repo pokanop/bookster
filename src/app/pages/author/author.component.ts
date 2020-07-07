@@ -4,6 +4,7 @@ import { Observable, Subscription } from 'rxjs';
 import { ActivatedRoute, ParamMap } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 import { AuthorService } from '@src/app/services/author.service';
+import { randomAuthor } from '@src/app/helpers/random';
 
 @Component({
   selector: 'app-author',
@@ -11,7 +12,7 @@ import { AuthorService } from '@src/app/services/author.service';
   styleUrls: ['./author.component.scss'],
 })
 export class AuthorComponent implements OnInit, OnDestroy {
-  author: Author;
+  author: Author = randomAuthor();
   private subscription: Subscription;
 
   constructor(
@@ -20,18 +21,18 @@ export class AuthorComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
-    this.subscription = this.route.paramMap
-      .pipe(
-        switchMap((params: ParamMap) => {
-          return new Observable<Author>((observer) =>
-            observer.next(this.authorService.getAuthor(params.get('id')))
-          );
-        })
-      )
-      .subscribe((author) => (this.author = author));
+    // this.subscription = this.route.paramMap
+    //   .pipe(
+    //     switchMap((params: ParamMap) => {
+    //       return new Observable<Author>((observer) =>
+    //         observer.next(this.authorService.getAuthor(params.get('id')))
+    //       );
+    //     })
+    //   )
+    //   .subscribe((author) => (this.author = author));
   }
 
   ngOnDestroy(): void {
-    this.subscription.unsubscribe();
+    // this.subscription.unsubscribe();
   }
 }

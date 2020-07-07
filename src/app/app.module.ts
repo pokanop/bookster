@@ -32,6 +32,8 @@ import { AuthorsComponent } from '@src/app/pages/authors/authors.component';
 import { AuthorComponent } from '@src/app/pages/author/author.component';
 import { StopPropagationDirective } from '@src/app/directives/stop-propagation.directive';
 import { RatingComponent } from '@src/app/components/rating/rating.component';
+import { HeroPanelComponent } from '@src/app/components/hero-panel/hero-panel.component';
+import { HeroImageComponent } from '@src/app/components/hero-image/hero-image.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +52,8 @@ import { RatingComponent } from '@src/app/components/rating/rating.component';
     AuthorComponent,
     StopPropagationDirective,
     RatingComponent,
+    HeroPanelComponent,
+    HeroImageComponent,
   ],
   imports: [
     BrowserModule,

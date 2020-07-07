@@ -49,7 +49,12 @@ export function randomBooks(count: number): Book[] {
 }
 
 export function randomAuthor(): Author {
-  return new Author(randomString(16), randomString(10), randomString(20));
+  return new Author(
+    randomString(16),
+    randomString(10),
+    randomString(500),
+    new URL('https://www.w3schools.com/howto/img_avatar.png')
+  );
 }
 
 export function randomAuthors(count: number): Author[] {

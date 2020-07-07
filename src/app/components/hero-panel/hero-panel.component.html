@@ -1,0 +1,7 @@
+<div class="hero-panel">
+  <app-hero-image image="{{ person.imageUrl }}" size="sm"></app-hero-image>
+  <h3 *ngIf="showsKind">{{ person.kind | uppercase }}</h3>
+  <div class="divider"></div>
+  <h1>{{ person.name }}</h1>
+  <p>{{ person.bio }}</p>
+</div>
