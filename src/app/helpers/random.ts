@@ -9,10 +9,13 @@ import { Collection } from '../models/collection.model';
 
 var randomCounter = 0;
 
-export function randomString(length: number) {
+export function randomString(length: number, includeSpace: boolean = true) {
   var result = '';
   var characters =
-    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 ';
+    'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  if (includeSpace) {
+    characters += ' ';
+  }
   var charactersLength = characters.length;
   for (var i = 0; i < length; i++) {
     result += characters.charAt(Math.floor(Math.random() * charactersLength));
@@ -25,7 +28,7 @@ export function randomBook(
   similar: boolean = true
 ): Book {
   let book = new Book(
-    randomString(16),
+    randomString(16, false),
     randomString(10),
     randomString(24),
     author,
@@ -42,7 +45,13 @@ export function randomBook(
     new Publisher(randomString(10)),
     new Date(),
     Language.English,
-    []
+    [],
+    [],
+    [
+      randomUser(new Library([], [], [])),
+      randomUser(new Library([], [], [])),
+      randomUser(new Library([], [], [])),
+    ]
   );
 
   if (similar) {
@@ -64,9 +73,9 @@ export function randomBooks(count: number): Book[] {
   return books;
 }
 
-export function randomAuthor(): Author {
+export function randomAuthor(similar: boolean = true): Author {
   let author = new Author(
-    randomString(16),
+    randomString(16, false),
     randomString(10),
     randomString(500),
     new URL('https://www.w3schools.com/howto/img_avatar.png'),
@@ -74,6 +83,14 @@ export function randomAuthor(): Author {
     [Category.ActionAdventure, Category.Crime, Category.Fantasy]
   );
   author.books = [randomBook(author), randomBook(author), randomBook(author)];
+  if (similar) {
+    author.similarAuthors = [
+      randomAuthor(false),
+      randomAuthor(false),
+      randomAuthor(false),
+      randomAuthor(false),
+    ];
+  }
   return author;
 }
 
@@ -85,14 +102,14 @@ export function randomAuthors(count: number): Author[] {
   return authors;
 }
 
-export function randomUser(): User {
+export function randomUser(library: Library = randomLibrary()): User {
   return new User(
-    randomString(16),
+    randomString(16, false),
     randomString(10),
     randomString(10),
     randomString(250),
     new URL('https://www.w3schools.com/howto/img_avatar.png'),
-    randomLibrary()
+    library
   );
 }
 

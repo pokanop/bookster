@@ -43,4 +43,8 @@ export const routes: Routes = [
     path: 'profile',
     component: ProfileComponent,
   },
+  {
+    path: 'user/:id',
+    redirectTo: '/profile',
+  },
 ];

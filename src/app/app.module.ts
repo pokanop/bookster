@@ -35,6 +35,8 @@ import { StopPropagationDirective } from '@src/app/directives/stop-propagation.d
 import { RatingComponent } from '@src/app/components/rating/rating.component';
 import { HeroPanelComponent } from '@src/app/components/hero-panel/hero-panel.component';
 import { HeroImageComponent } from '@src/app/components/hero-image/hero-image.component';
+import { CircleListComponent } from '@src/app/components/circle-list/circle-list.component';
+import { CircleButtonComponent } from '@src/app/components/circle-button/circle-button.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +57,8 @@ import { HeroImageComponent } from '@src/app/components/hero-image/hero-image.co
     RatingComponent,
     HeroPanelComponent,
     HeroImageComponent,
+    CircleListComponent,
+    CircleButtonComponent,
   ],
   imports: [
     BrowserModule,

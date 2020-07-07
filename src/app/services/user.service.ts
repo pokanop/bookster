@@ -20,7 +20,7 @@ export class UserService {
 
   private seedUsers(): Map<string, User> {
     let map = new Map<string, User>();
-    let users = randomUsers(100);
+    let users = randomUsers(10);
     users.forEach((user) => {
       map.set(user.id, user);
     });

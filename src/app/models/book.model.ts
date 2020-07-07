@@ -3,6 +3,7 @@ import { Category } from './category.enum';
 import { Publisher } from './publisher.model';
 import { Language } from './language.enum';
 import { Review } from './review.model';
+import { User } from './user.model';
 
 export class Book {
   constructor(
@@ -22,6 +23,7 @@ export class Book {
     public releaseDate: Date,
     public language: Language,
     public reviews: Review[],
-    public similarBooks?: Book[]
+    public similarBooks?: Book[],
+    public recommendedBy?: User[]
   ) {}
 }

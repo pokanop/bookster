@@ -22,7 +22,7 @@ export class AuthorService {
 
   private seedAuthors(): Map<string, Author> {
     let map = new Map<string, Author>();
-    let authors = randomAuthors(1000);
+    let authors = randomAuthors(50);
     authors.forEach((author) => {
       map.set(author.id, author);
     });

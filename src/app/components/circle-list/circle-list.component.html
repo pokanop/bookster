@@ -1,0 +1,8 @@
+<div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="16px">
+  <app-circle-button
+    *ngFor="let person of people"
+    [route]="person.kind"
+    [id]="person.id"
+    [image]="person.imageUrl"
+  ></app-circle-button>
+</div>

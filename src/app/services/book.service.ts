@@ -22,7 +22,7 @@ export class BookService {
 
   private seedBooks(): Map<string, Book> {
     let map = new Map<string, Book>();
-    let books = randomBooks(1000);
+    let books = randomBooks(100);
     books.forEach((book) => {
       let author = this.authorService.getRandomAuthor();
       author.books = [];
