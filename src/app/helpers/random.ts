@@ -53,7 +53,9 @@ export function randomAuthor(): Author {
     randomString(16),
     randomString(10),
     randomString(500),
-    new URL('https://www.w3schools.com/howto/img_avatar.png')
+    new URL('https://www.w3schools.com/howto/img_avatar.png'),
+    [randomBook(), randomBook(), randomBook()],
+    [Category.ActionAdventure, Category.Crime, Category.Fantasy]
   );
 }
 

@@ -1,3 +1,15 @@
-<div fxLayout="column">
+<div fxLayout="column" fxLayoutGap="24px">
   <app-hero-panel [person]="author"></app-hero-panel>
+
+  <mat-chip-list>
+    <mat-chip *ngFor="let category of author.categories">
+      {{ category }}
+    </mat-chip>
+  </mat-chip-list>
+
+  <div>
+    <h2>Books</h2>
+
+    <app-book-card-list [books]="author.books"></app-book-card-list>
+  </div>
 </div>

@@ -14,6 +14,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatListModule } from '@angular/material/list';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatChipsModule } from '@angular/material/chips';
 import { NgxFilesizeModule } from 'ngx-filesize';
 
 import { AppRoutingModule } from '@src/app/app-routing.module';
@@ -71,6 +72,7 @@ import { HeroImageComponent } from '@src/app/components/hero-image/hero-image.co
     MatSnackBarModule,
     MatListModule,
     MatTooltipModule,
+    MatChipsModule,
     NgxFilesizeModule,
     AppRoutingModule,
   ],
