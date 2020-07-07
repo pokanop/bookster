@@ -1,15 +1,14 @@
-@import '~@angular/material/theming';
-
-$app-primary: mat-palette($mat-indigo);
-$app-accent: mat-palette($mat-pink, 'A200');
-$app-warn: mat-palette($mat-red);
-
-$primary: mat-color($app-primary);
-$accent: mat-color($app-accent);
-$warn: mat-color($app-warn);
+@import '~src/_variables.scss';
 
 .spacer {
   flex: 1 1 auto;
+}
+
+.mat-sidenav-container {
+  button {
+    background-color: transparent;
+    color: white;
+  }
 }
 
 .menu-container {

@@ -2,6 +2,7 @@
 
 // Import common styles
 @import 'app-common';
+@import '_variables.scss';
 @import '~@fortawesome/fontawesome-free/css/all.css';
 
 html,
@@ -21,13 +22,17 @@ body {
 
   .mat-card-content {
     height: 75px;
-    overflow-y: hidden;
+    overflow-y: scroll;
   }
 
   margin: 0;
   padding: 0 !important;
 }
 
-.mat-button-focus-overlay {
-  background-color: transparent !important;
+.favorite {
+  color: $accent !important;
+}
+
+.float-right {
+  float: right;
 }

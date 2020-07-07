@@ -1,9 +1,7 @@
-@import '../../app.component.scss';
-
 mat-card-actions {
-  .favorite,
-  .download {
-    color: $accent;
+  a,
+  button {
+    color: black;
   }
 
   margin-bottom: -8px;
@@ -12,10 +10,10 @@ mat-card-actions {
 }
 
 .mat-menu-item {
-  font-size: 18px;
+  font-size: 22px;
 
   .mat-icon {
-    padding-top: 5px;
+    padding-top: 3px;
   }
 
   .fa-twitter {

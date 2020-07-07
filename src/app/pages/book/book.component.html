@@ -37,6 +37,13 @@
         <mat-icon>subject</mat-icon>
         <span>Read this Book</span>
       </button>
+
+      <mat-divider></mat-divider>
+
+      <button mat-raised-button color="warn" class="side-button">
+        <mat-icon>delete</mat-icon>
+        <span>Delete the Book</span>
+      </button>
     </div>
   </div>
 
@@ -55,6 +62,9 @@
 
     <h2>About the Book</h2>
     <p>{{ book.summary }}</p>
+
+    <mat-divider></mat-divider>
+
     <h2>Information</h2>
 
     <div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="8px">
@@ -85,7 +95,7 @@
             <div mat-line>{{ book.releaseDate | date }}</div>
           </mat-list-item>
           <mat-list-item>
-            <mat-icon mat-list-icon>layers</mat-icon>
+            <mat-icon mat-list-icon>menu_book</mat-icon>
             <div mat-line>Pages</div>
             <div mat-line>{{ book.pageCount }}</div>
           </mat-list-item>
