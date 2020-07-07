@@ -3,5 +3,5 @@ export interface Person {
   kind: string;
   name: string;
   bio: string;
-  imageUrl?: URL;
+  imageUrl: URL;
 }

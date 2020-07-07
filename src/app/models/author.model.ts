@@ -9,7 +9,7 @@ export class Author implements Person {
     public id: string,
     public name: string,
     public bio: string,
-    public imageUrl?: URL,
+    public imageUrl: URL,
     public books?: Book[],
     public categories?: Category[],
     public similarAuthors?: Author[]

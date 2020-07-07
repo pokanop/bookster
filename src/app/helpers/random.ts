@@ -3,6 +3,7 @@ import { Author } from '../models/author.model';
 import { Category } from '../models/category.enum';
 import { Publisher } from '../models/publisher.model';
 import { Language } from '../models/language.enum';
+import { User } from '../models/user.model';
 
 var randomCounter = 0;
 
@@ -65,4 +66,22 @@ export function randomAuthors(count: number): Author[] {
     authors.push(randomAuthor());
   }
   return authors;
+}
+
+export function randomUser(): User {
+  return new User(
+    randomString(16),
+    randomString(10),
+    randomString(10),
+    randomString(250),
+    new URL('https://www.w3schools.com/howto/img_avatar.png')
+  );
+}
+
+export function randomUsers(count: number): User[] {
+  let users: User[] = [];
+  for (let i = 0; i < count; i++) {
+    users.push(randomUser());
+  }
+  return users;
 }
