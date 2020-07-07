@@ -3,7 +3,7 @@ import { Book } from './book.model';
 import { Person } from './person';
 
 export class Author implements Person {
-  public kind = 'author';
+  public kind = 'authors';
 
   constructor(
     public id: string,

@@ -14,10 +14,12 @@ export class AuthorService {
     return this.authors.get(id);
   }
 
-  getRandomAuthor(): Author {
-    let values = Array.from(this.authors.values());
-    let index = Math.floor(Math.random() * values.length);
-    return values[index];
+  setAuthor(author: Author) {
+    this.authors.set(author.id, author);
+  }
+
+  getAuthors(): Author[] {
+    return Array.from(this.authors.values());
   }
 
   private seedAuthors(): Map<string, Author> {

@@ -3,7 +3,7 @@ import { Library } from './library.model';
 
 export class User implements Person {
   public name: string;
-  public kind = 'user';
+  public kind = 'users';
 
   constructor(
     public id: string,

@@ -8,6 +8,7 @@ import { FriendsComponent } from './pages/friends/friends.component';
 import { BookComponent } from './pages/book/book.component';
 import { AuthorsComponent } from './pages/authors/authors.component';
 import { AuthorComponent } from './pages/author/author.component';
+import { UserComponent } from './pages/user/user.component';
 
 export const routes: Routes = [
   {
@@ -44,7 +45,7 @@ export const routes: Routes = [
     component: ProfileComponent,
   },
   {
-    path: 'user/:id',
-    redirectTo: '/profile',
+    path: 'users/:id',
+    component: UserComponent,
   },
 ];

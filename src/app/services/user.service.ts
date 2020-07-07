@@ -1,24 +1,25 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/user.model';
-import { randomUsers, randomElement } from '../helpers/random';
+import { randomUsers, randomElement, randomUser } from '../helpers/random';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
-  private users: Map<string, User> = this.seedUsers();
+  private users = new Map<string, User>();
   private currentUser: User;
 
   constructor() {
-    this.currentUser = randomElement(Array.from(this.users.values()));
+    this.currentUser = randomUser();
     this.currentUser.name = 'Foo Bar';
+    this.setUser(this.currentUser);
   }
 
-  public get(id: string): User | undefined {
+  public getUser(id: string): User | undefined {
     return this.users.get(id);
   }
 
-  public set(user: User) {
+  public setUser(user: User) {
     this.users.set(user.id, user);
   }
 
@@ -26,12 +27,7 @@ export class UserService {
     return this.currentUser;
   }
 
-  private seedUsers(): Map<string, User> {
-    let map = new Map<string, User>();
-    let users = randomUsers(10);
-    users.forEach((user) => {
-      map.set(user.id, user);
-    });
-    return map;
+  public getUsers(): User[] {
+    return Array.from(this.users.values());
   }
 }
