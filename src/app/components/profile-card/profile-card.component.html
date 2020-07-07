@@ -4,7 +4,11 @@
   fxLayoutGap="16px"
   class="profile-card"
 >
-  <app-hero-image [image]="user.imageUrl" size="sm"></app-hero-image>
+  <app-hero-image
+    [image]="user.imageUrl"
+    size="sm"
+    [showsCameraButton]="true"
+  ></app-hero-image>
   <h3>{{ user.name }}</h3>
 
   <mat-list class="profile-stats">

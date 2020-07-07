@@ -8,10 +8,13 @@ import { Component, OnInit, Input } from '@angular/core';
 export class HeroImageComponent implements OnInit {
   @Input() image: URL;
   @Input() size: ImageSize;
+  @Input() showsCameraButton: boolean = false;
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  onFileSelect(event) {}
 }
 
 export enum ImageSize {

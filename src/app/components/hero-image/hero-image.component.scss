@@ -17,3 +17,18 @@ img.lg {
   height: 300px;
   width: 300px;
 }
+
+.hero-image-container {
+  display: inline-block;
+  position: relative;
+}
+
+button {
+  position: absolute;
+  bottom: 0;
+  right: -4px;
+  z-index: 100;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
