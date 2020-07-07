@@ -9,6 +9,13 @@
     background-color: transparent;
     color: white;
   }
+
+  .mat-toolbar {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1000;
+  }
 }
 
 .menu-container {
