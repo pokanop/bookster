@@ -138,6 +138,10 @@ export function randomCollections(count: number): Collection[] {
   return collections;
 }
 
+export function randomElement(items: any[]): any {
+  return items[Math.floor(Math.random() * items.length)];
+}
+
 export function randomElements(items: any[], count: number): any[] {
   let out: any[] = [];
   for (let i = 0; i < count; i++) {

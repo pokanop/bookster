@@ -1,14 +1,18 @@
 import { Injectable } from '@angular/core';
 import { User } from '../models/user.model';
-import { randomUsers } from '../helpers/random';
+import { randomUsers, randomElement } from '../helpers/random';
 
 @Injectable({
   providedIn: 'root',
 })
 export class UserService {
   private users: Map<string, User> = this.seedUsers();
+  private currentUser: User;
 
-  constructor() {}
+  constructor() {
+    this.currentUser = randomElement(Array.from(this.users.values()));
+    this.currentUser.name = 'Foo Bar';
+  }
 
   public get(id: string): User | undefined {
     return this.users.get(id);
@@ -16,6 +20,10 @@ export class UserService {
 
   public set(user: User) {
     this.users.set(user.id, user);
+  }
+
+  public getCurrentUser(): User {
+    return this.currentUser;
   }
 
   private seedUsers(): Map<string, User> {

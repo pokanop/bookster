@@ -15,6 +15,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatListModule } from '@angular/material/list';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatTabsModule } from '@angular/material/tabs';
 import { NgxFilesizeModule } from 'ngx-filesize';
 
 import { AppRoutingModule } from '@src/app/app-routing.module';
@@ -77,6 +78,7 @@ import { CircleButtonComponent } from '@src/app/components/circle-button/circle-
     MatListModule,
     MatTooltipModule,
     MatChipsModule,
+    MatTabsModule,
     NgxFilesizeModule,
     AppRoutingModule,
   ],
