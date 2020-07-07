@@ -1,11 +1,17 @@
 <h1>Profile</h1>
 
-<section>
-  <mat-tab-group>
-    <mat-tab label="Account">Account</mat-tab>
+<div fxLayout="row" fxLayoutAlign="start" fxLayoutGap="32px">
+  <section fxFlex="25%">
+    <app-profile-card [user]="currentUser"></app-profile-card>
+  </section>
 
-    <mat-tab label="Settings">Settings</mat-tab>
+  <section fxFlex="75%">
+    <mat-tab-group>
+      <mat-tab label="Account">Account</mat-tab>
 
-    <mat-tab label="Server">Server</mat-tab>
-  </mat-tab-group>
-</section>
+      <mat-tab label="Settings">Settings</mat-tab>
+
+      <mat-tab label="Server">Server</mat-tab>
+    </mat-tab-group>
+  </section>
+</div>

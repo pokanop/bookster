@@ -38,6 +38,7 @@ import { HeroPanelComponent } from '@src/app/components/hero-panel/hero-panel.co
 import { HeroImageComponent } from '@src/app/components/hero-image/hero-image.component';
 import { CircleListComponent } from '@src/app/components/circle-list/circle-list.component';
 import { CircleButtonComponent } from '@src/app/components/circle-button/circle-button.component';
+import { ProfileCardComponent } from '@src/app/components/profile-card/profile-card.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { CircleButtonComponent } from '@src/app/components/circle-button/circle-
     HeroImageComponent,
     CircleListComponent,
     CircleButtonComponent,
+    ProfileCardComponent,
   ],
   imports: [
     BrowserModule,

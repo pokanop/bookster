@@ -1,0 +1,31 @@
+<div
+  fxLayout="column"
+  fxLayoutAlign="center"
+  fxLayoutGap="16px"
+  class="profile-card"
+>
+  <app-hero-image [image]="user.imageUrl" size="sm"></app-hero-image>
+  <h3>{{ user.name }}</h3>
+
+  <mat-list class="profile-stats">
+    <mat-list-item>
+      <mat-icon mat-list-icon>book</mat-icon>
+      <div mat-line>Books</div>
+      <div mat-line class="accented">{{ user.library.books.length }}</div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>
+      <mat-icon mat-list-icon>collections_bookmark</mat-icon>
+      <div mat-line>Collections</div>
+      <div mat-line class="accented">
+        {{ user.library.collections.length }}
+      </div>
+    </mat-list-item>
+    <mat-divider></mat-divider>
+    <mat-list-item>
+      <mat-icon mat-list-icon>favorite</mat-icon>
+      <div mat-line>Favorites</div>
+      <div mat-line class="accented">{{ user.library.favorites.length }}</div>
+    </mat-list-item>
+  </mat-list>
+</div>
