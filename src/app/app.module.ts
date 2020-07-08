@@ -68,7 +68,7 @@ import { BasicCardComponent } from '@src/app/components/basic-card/basic-card.co
     BasicCardComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     BrowserAnimationsModule,
     FlexLayoutModule,
     MatIconModule,

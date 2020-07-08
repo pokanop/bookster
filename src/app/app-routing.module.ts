@@ -10,7 +10,11 @@ import { routes } from '@src/app/app.routes';
 import { filter } from 'rxjs/operators';
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      initialNavigation: 'enabled',
+    }),
+  ],
   exports: [RouterModule],
 })
 export class AppRoutingModule {
@@ -33,6 +37,10 @@ export class AppRoutingModule {
       .subscribe({
         next: (event: RouterEvent) => {
           const scrollContainer = document.querySelector('mat-sidenav-content');
+          if (!scrollContainer) {
+            return;
+          }
+
           if (event instanceof NavigationStart) {
             this.scrollTopPositions[router.url] = scrollContainer.scrollTop;
           } else if (event instanceof NavigationEnd) {
