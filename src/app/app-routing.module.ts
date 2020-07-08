@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, Inject, PLATFORM_ID } from '@angular/core';
 import {
   RouterModule,
   Router,
@@ -8,6 +8,7 @@ import {
 } from '@angular/router';
 import { routes } from '@src/app/app.routes';
 import { filter } from 'rxjs/operators';
+import { isPlatformBrowser } from '@angular/common';
 
 @NgModule({
   imports: [
@@ -26,7 +27,11 @@ export class AppRoutingModule {
   //
   scrollTopPositions: { [url: string]: number } = {};
 
-  constructor(router: Router) {
+  constructor(@Inject(PLATFORM_ID) platformId: Object, router: Router) {
+    if (!isPlatformBrowser(platformId)) {
+      return;
+    }
+
     router.events
       .pipe(
         filter(
