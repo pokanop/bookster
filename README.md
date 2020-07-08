@@ -29,3 +29,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Known issues
 
 - [Module file (/src/@src/app/app.module.ts) not found](https://github.com/ngx-rocket/generator-ngx-rocket/issues/472)
+- [Warning: Flex Layout loaded on the server without FlexLayoutServerModule](https://github.com/angular/flex-layout/blob/master/guides/SSR.md)
