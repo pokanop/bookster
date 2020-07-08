@@ -22,6 +22,7 @@ import { CircleListComponent } from '@src/app/components/circle-list/circle-list
 import { CircleButtonComponent } from '@src/app/components/circle-button/circle-button.component';
 import { ProfileCardComponent } from '@src/app/components/profile-card/profile-card.component';
 import { UserComponent } from '@src/app/pages/user/user.component';
+import { BasicCardComponent } from '@src/app/components/basic-card/basic-card.component';
 
 // Uncomment and add to NgModule imports if you need to use two-way binding and/or HTTP wrapper
 // import { NativeScriptFormsModule, NativeScriptHttpClientModule } from '@nativescript/angular';
@@ -48,6 +49,7 @@ import { UserComponent } from '@src/app/pages/user/user.component';
     CircleButtonComponent,
     ProfileCardComponent,
     UserComponent,
+    BasicCardComponent,
   ],
   imports: [NativeScriptModule, AppRoutingModule],
   providers: [],

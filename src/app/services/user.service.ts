@@ -11,6 +11,8 @@ export class UserService {
 
   constructor() {
     this.currentUser = randomUser();
+    this.currentUser.firstName = 'Foo';
+    this.currentUser.lastName = 'Bar';
     this.currentUser.name = 'Foo Bar';
     this.setUser(this.currentUser);
   }

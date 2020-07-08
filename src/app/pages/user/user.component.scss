@@ -1,0 +1,19 @@
+.collection-cards {
+  margin-top: 16px;
+}
+
+app-basic-card {
+  img {
+    height: 180px;
+    width: 164px;
+    object-fit: cover;
+  }
+
+  h3 {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
+  height: 232px;
+  text-align: center;
+}

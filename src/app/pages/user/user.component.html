@@ -2,4 +2,32 @@
   <section>
     <app-hero-panel [person]="user"></app-hero-panel>
   </section>
+
+  <section>
+    <h2>Favorites</h2>
+    <p>Check out {{ user.firstName }}'s favorite books</p>
+
+    <app-book-card-list [books]="user.library.favorites"></app-book-card-list>
+  </section>
+
+  <section>
+    <h2>Collections</h2>
+    <p>Some of the {{ user.firstName }}'s book collections</p>
+
+    <div
+      fxLayout="row"
+      fxLayoutAlign="start"
+      fxLayoutGap="16px"
+      class="collection-cards"
+    >
+      <app-basic-card
+        [stacked]="true"
+        *ngFor="let collection of user.library.collections"
+      >
+        <img src="{{ collection.imageUrl }}" alt="" style="display: block;" />
+
+        <h3>{{ collection.name }}</h3>
+      </app-basic-card>
+    </div>
+  </section>
 </div>

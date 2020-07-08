@@ -40,6 +40,7 @@ import { CircleListComponent } from '@src/app/components/circle-list/circle-list
 import { CircleButtonComponent } from '@src/app/components/circle-button/circle-button.component';
 import { ProfileCardComponent } from '@src/app/components/profile-card/profile-card.component';
 import { UserComponent } from '@src/app/pages/user/user.component';
+import { BasicCardComponent } from '@src/app/components/basic-card/basic-card.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { UserComponent } from '@src/app/pages/user/user.component';
     CircleButtonComponent,
     ProfileCardComponent,
     UserComponent,
+    BasicCardComponent,
   ],
   imports: [
     BrowserModule,
