@@ -9,24 +9,28 @@ export class UsersService {
   constructor() {
     this.users = [
       {
-        userId: 1,
+        id: 'A73E92C4-5952-4869-80DC-50E467F5311C',
         username: 'john',
         password: 'changeme',
       },
       {
-        userId: 2,
+        id: '20161998-3C96-4528-8395-E5928B40CC80',
         username: 'chris',
         password: 'secret',
       },
       {
-        userId: 3,
+        id: '0091A71B-799E-4AC0-B8D3-E1F6256933DE',
         username: 'maria',
         password: 'guess',
       },
     ];
   }
 
-  async findOne(username: string): Promise<User | undefined> {
+  async findOne(id: string): Promise<User | undefined> {
+    return this.users.find((user) => user.id === id);
+  }
+
+  async findBy(username: string): Promise<User | undefined> {
     return this.users.find((user) => user.username === username);
   }
 }
