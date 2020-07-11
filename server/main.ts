@@ -2,16 +2,19 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import * as helmet from 'helmet';
 import { TimeoutInterceptor } from './interceptors/timeout.interceptor';
+import { ConfigService } from '@nestjs/config';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+  const configService = app.get(ConfigService);
+  const port = configService.get<number>('server.port');
 
   app.setGlobalPrefix('api');
   app.use(helmet());
   app.enableCors();
   app.useGlobalInterceptors(new TimeoutInterceptor());
 
-  await app.listen(process.env.PORT || 4200);
+  await app.listen(process.env.PORT || port);
 }
 
 // Webpack will replace 'require' with '__webpack_require__'
