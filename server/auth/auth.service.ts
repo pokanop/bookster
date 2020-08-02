@@ -1,7 +1,10 @@
-import { Injectable, UnauthorizedException } from '@nestjs/common';
-import { UsersService, User } from '../users/users.service';
+import {
+  Injectable,
+  UnauthorizedException,
+  BadRequestException,
+} from '@nestjs/common';
+import { UsersService } from '../users/users.service';
 import { JwtService } from '@nestjs/jwt';
-import { ConfigService } from '@nestjs/config';
 
 export type Session = any;
 
@@ -18,20 +21,23 @@ export class AuthService {
     console.log(`validating username: ${username} password: ${password}`);
     const user = await this.usersService.findBy(username);
     if (user && user.password === password) {
-      const { password, ...result } = user;
-      return result;
+      return user;
     }
     return null;
   }
 
-  async validateToken(token: string): Promise<any> {
-    console.log(`validating token: ${token}`);
+  async validateToken(bearerToken: string): Promise<any> {
+    console.log(`validating token: ${bearerToken}`);
+    const token = bearerToken.split(' ')[1];
     const payload = this.jwtService.verify(token);
     console.log(payload);
     const session = this.sessions.get(payload.uid);
+    if (!session) {
+      return null;
+    }
     const user = await this.usersService.findOne(session.user.id);
-    if (!session || !user) {
-      throw UnauthorizedException;
+    if (!user) {
+      return null;
     }
     return user;
   }
@@ -55,5 +61,20 @@ export class AuthService {
     return {
       status: 'logged out',
     };
+  }
+
+  async register(user: any): Promise<any> {
+    console.log(`registering user ${user.username}`);
+
+    try {
+      const result = await this.usersService.create(
+        user.username,
+        user.password
+      );
+      return result;
+    } catch (err) {
+      console.log(err);
+      throw new BadRequestException();
+    }
   }
 }
