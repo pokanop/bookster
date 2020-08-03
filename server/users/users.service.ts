@@ -15,6 +15,10 @@ export class UsersService {
     return createdUser.save();
   }
 
+  async destroy(username: string): Promise<any> {
+    return this.userModel.deleteOne({ username: username }).exec();
+  }
+
   async findOne(id: string): Promise<User> {
     return this.userModel.findById(id).exec();
   }

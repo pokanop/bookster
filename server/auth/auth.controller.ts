@@ -22,4 +22,10 @@ export class AuthController {
   async register(@Request() req) {
     return this.authService.register(req.body);
   }
+
+  @UseGuards(AuthGuard)
+  @Post('deregister')
+  async deregister(@Request() req) {
+    return this.authService.deregister(req.user);
+  }
 }

@@ -77,4 +77,12 @@ export class AuthService {
       throw new BadRequestException();
     }
   }
+
+  async deregister(user: any): Promise<any> {
+    console.log(`deregistering user ${user.username}`);
+
+    const result = await this.usersService.destroy(user.username);
+    console.log(`result: ${JSON.stringify(result)}`);
+    return result;
+  }
 }
