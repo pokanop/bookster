@@ -19,25 +19,26 @@ export class AuthService {
 
   async validateUser(username: string, password: string): Promise<any> {
     console.log(`validating username: ${username} password: ${password}`);
-    const user = await this.usersService.findBy(username);
+    const user = await this.usersService.findBy(username).catch((e) => {
+      throw e;
+    });
     if (user && user.password === password) {
       return user;
     }
-    return null;
+    throw new UnauthorizedException();
   }
 
-  async validateToken(bearerToken: string): Promise<any> {
-    console.log(`validating token: ${bearerToken}`);
-    const token = bearerToken.split(' ')[1];
-    const payload = this.jwtService.verify(token);
-    console.log(payload);
-    const session = this.sessions.get(payload.uid);
+  async validateUserId(userId: string): Promise<any> {
+    console.log(`validating userId: ${userId}`);
+    const session = this.sessions.get(userId);
     if (!session) {
-      return null;
+      throw new UnauthorizedException();
     }
-    const user = await this.usersService.findOne(session.user.id);
+    const user = await this.usersService.findOne(session.user.id).catch((e) => {
+      throw e;
+    });
     if (!user) {
-      return null;
+      throw new UnauthorizedException();
     }
     return user;
   }
@@ -65,22 +66,18 @@ export class AuthService {
 
   async register(user: any): Promise<any> {
     console.log(`registering user ${user.username}`);
-
-    try {
-      const result = await this.usersService.create(
-        user.username,
-        user.password
-      );
-      return result;
-    } catch (err) {
-      console.log(err);
-      throw new BadRequestException();
-    }
+    const result = await this.usersService
+      .create(user.username, user.password)
+      .catch((e) => {
+        console.log(e);
+        throw new BadRequestException();
+      });
+    console.log(`result: ${JSON.stringify(result)}`);
+    return result;
   }
 
   async deregister(user: any): Promise<any> {
     console.log(`deregistering user ${user.username}`);
-
     const result = await this.usersService.destroy(user.username);
     console.log(`result: ${JSON.stringify(result)}`);
     return result;
