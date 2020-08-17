@@ -1,18 +1,21 @@
-import { NestFactory } from '@nestjs/core';
+import { NestFactory, HttpAdapterHost } from '@nestjs/core';
 import { AppModule } from './app.module';
 import * as helmet from 'helmet';
 import { TimeoutInterceptor } from './interceptors/timeout.interceptor';
 import { ConfigService } from '@nestjs/config';
+import { AllExceptionsFilter } from './filters/all-exceptions.filter';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const configService = app.get(ConfigService);
   const port = configService.get<number>('server.port');
+  const { httpAdapter } = app.get(HttpAdapterHost);
 
   app.setGlobalPrefix('api');
   app.use(helmet());
   app.enableCors();
   app.useGlobalInterceptors(new TimeoutInterceptor());
+  app.useGlobalFilters(new AllExceptionsFilter(httpAdapter));
 
   await app.listen(process.env.PORT || port);
 }

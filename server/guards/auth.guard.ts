@@ -25,18 +25,34 @@ export class AuthGuard implements CanActivate {
   }
 
   async checkUser(req: any): Promise<boolean> {
-    req.user = await this.authService.validateUser(
-      req.body.username,
-      req.body.password
-    );
-    return req.user;
+    try {
+      req.user = await this.authService.validateUser(
+        req.body.username,
+        req.body.password
+      );
+      return req.user;
+    } catch (err) {
+      if (err instanceof Error) {
+        console.log(`${err.name}: ${err.message}`);
+      }
+      return false;
+    }
   }
 
   async checkToken(req: any): Promise<boolean> {
-    req.user = await this.authService.validateToken(req.headers.authorization);
-    if (!req.user) {
-      throw new UnauthorizedException();
+    try {
+      req.user = await this.authService.validateToken(
+        req.headers.authorization
+      );
+      if (!req.user) {
+        return false;
+      }
+      return req.user;
+    } catch (err) {
+      if (err instanceof Error) {
+        console.log(`${err.name}: ${err.message}`);
+      }
+      return false;
     }
-    return req.user;
   }
 }
