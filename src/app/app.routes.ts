@@ -9,12 +9,17 @@ import { BookComponent } from './pages/book/book.component';
 import { AuthorsComponent } from './pages/authors/authors.component';
 import { AuthorComponent } from './pages/author/author.component';
 import { UserComponent } from './pages/user/user.component';
+import { LandingComponent } from './pages/landing/landing.component';
 
 export const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
     pathMatch: 'full',
+  },
+  {
+    path: 'landing',
+    component: LandingComponent,
   },
   {
     path: 'library',

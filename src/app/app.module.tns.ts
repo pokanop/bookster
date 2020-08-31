@@ -23,6 +23,7 @@ import { CircleButtonComponent } from '@src/app/components/circle-button/circle-
 import { ProfileCardComponent } from '@src/app/components/profile-card/profile-card.component';
 import { UserComponent } from '@src/app/pages/user/user.component';
 import { BasicCardComponent } from '@src/app/components/basic-card/basic-card.component';
+import { LandingComponent } from '@src/app/pages/landing/landing.component';
 
 // Uncomment and add to NgModule imports if you need to use two-way binding and/or HTTP wrapper
 // import { NativeScriptFormsModule, NativeScriptHttpClientModule } from '@nativescript/angular';
@@ -50,6 +51,7 @@ import { BasicCardComponent } from '@src/app/components/basic-card/basic-card.co
     ProfileCardComponent,
     UserComponent,
     BasicCardComponent,
+    LandingComponent,
   ],
   imports: [NativeScriptModule, AppRoutingModule],
   providers: [],

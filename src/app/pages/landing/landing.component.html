@@ -1,0 +1,27 @@
+<app-basic-card fxLayout="column" fxLayoutAlign="center stretch" fxFlexFill>
+  <div
+    fxLayout="row"
+    fxLayoutAlign="center stretch"
+    [fxShow]="isLogin()"
+    class="landing-content"
+  >
+    <div fxFlex="60%" fxFlexFill>
+      <h1>Login</h1>
+    </div>
+
+    <div fxFlex="40%" fxFlexFill class="bg-login"></div>
+  </div>
+
+  <div
+    fxLayout="row"
+    fxLayoutAlign="center stretch"
+    [fxShow]="isRegister()"
+    class="landing-content"
+  >
+    <div fxFlex="40%" fxFlexFill class="bg-register"></div>
+
+    <div fxFlex="60%" fxFlexFill>
+      <h1>Register</h1>
+    </div>
+  </div>
+</app-basic-card>
