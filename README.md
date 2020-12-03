@@ -31,3 +31,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - [Module file (/src/@src/app/app.module.ts) not found](https://github.com/ngx-rocket/generator-ngx-rocket/issues/472)
 - [Warning: Flex Layout loaded on the server without FlexLayoutServerModule](https://github.com/angular/flex-layout/blob/master/guides/SSR.md)
 - [ReferenceError: document is not defined](https://github.com/angular/universal/issues/860)
+
+## If You ♥️ What We Do
+
+<a href="https://www.buymeacoffee.com/pokanopapps" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="60" width="217"></a>
