@@ -52,7 +52,7 @@
     "@nestjs/platform-express": "^6.0.0",
     "@nguniversal/express-engine": "^9.1.1",
     "class-transformer": "^0.2.3",
-    "class-validator": "^0.9.1",
+    "class-validator": "^0.14.0",
     "core-js": "^2.6.9",
     "csurf": "^1.11.0",
     "express": "^4.15.2",
